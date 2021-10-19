@@ -2,21 +2,15 @@
 import React from "react";
 
 import Layout from "./Components/Layout";
+import Drawer from "./Components/Drawer/LeftDrawer";
 
-import Home from './Components/Home'
+import Home from "./Components/Home";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { createTheme, ThemeProvider } from "@material-ui/core";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createTheme({
-  palette:{
-    primary:{
-      main: "#0000FF"
-    }
-  },
-  typography:{}
-})
+const theme = createTheme();
 
 const App = () => {
   return (

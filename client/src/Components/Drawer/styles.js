@@ -12,7 +12,7 @@ export default makeStyles((theme)=> ({
     },
     appBar: {
         marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`
+        width: `calc(100% - ${drawerWidth}px)!important`
     },
     drawer: {
         width: drawerWidth,
