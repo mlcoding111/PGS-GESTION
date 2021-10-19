@@ -3,12 +3,12 @@ import { makeStyles } from '@mui/styles';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import {format} from 'date-fns'
 import Logo from '../img/Logo/pgs_vector.svg'
-import {Drawer, CssBaseline, AppBar, Typography, List, Divider, ListItem, Toolbar } from '@mui/material'
+import {Drawer, CssBaseline, AppBar, Typography, List, Divider, ListItem, Toolbar, Avatar } from '@mui/material'
 
 // Icons
 import { ListItemIcon } from '@mui/material';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Folder, Group, Receipt, CreditCard, Help, Update, AccountBox} from '@mui/icons-material';
+import { Folder, Group, Receipt, CreditCard, Help, Update, AccountBox, AccountCircle, DeveloperModeSharp} from '@mui/icons-material';
 
 const drawerWidth = 240
 
@@ -29,7 +29,8 @@ const useStyle = makeStyles((theme) =>({
         },
         active: {
             background : '#FF7F7F!important',
-            fontWeight: 600,
+            fontWeight: 'bold!important',
+            Typography: 'bold'
         },
         title: {
             padding: 25,
@@ -48,8 +49,13 @@ const useStyle = makeStyles((theme) =>({
 // Drawer conent will be using this array of object in the future
 const menuItems = [
     {
+        text: "DEV",
+        icon: <DeveloperModeSharp color="dark" variant="contained"/>,
+        path: '/dev'
+    },
+    {
         text: "Dossiers",
-        icon: <Folder />,
+        icon: <Folder color="dark" variant="contained"/>,
         path: '/dossiers'
     },
     {
@@ -105,6 +111,8 @@ export default function Layout({children}) {
                     <Typography>
                         Stephane
                     </Typography>
+
+                    <AccountCircle fontSize="medium"/>
                 </Toolbar>
             </AppBar>
 
@@ -120,6 +128,7 @@ export default function Layout({children}) {
                     <Typography variant="h5" className={classes.title}>
                         PGS Gestion
                     </Typography>
+                    
                     {/* <Typography className={classes.date, classes.title}>
                     { format(new Date(), 'do MMMM Y')}
                     </Typography> */}
