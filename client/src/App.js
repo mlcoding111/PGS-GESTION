@@ -1,6 +1,10 @@
 // This is the main app file
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./Components/Layout";
+
+// Redux import
+import { useDispatch } from "react-redux";
+import { getPosts } from './actions/posts'
 
 // Routes
 import Home from "./Components/Home";
@@ -12,6 +16,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+      dispatch(getPosts())
+  }, [dispatch])
+  
   return (
     <ThemeProvider theme={theme}>
       <Router>
