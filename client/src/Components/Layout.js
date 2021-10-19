@@ -8,7 +8,7 @@ import {Drawer, CssBaseline, AppBar, Typography, List, Divider, ListItem, Toolba
 // Icons
 import { ListItemIcon } from '@mui/material';
 import ListItemText from '@material-ui/core/ListItemText';
-import { AccessAlarm, ThreeDRotation} from '@mui/icons-material';
+import { Folder, Group, Receipt, CreditCard, Help, Update, AccountBox} from '@mui/icons-material';
 
 const drawerWidth = 240
 
@@ -49,22 +49,22 @@ const useStyle = makeStyles((theme) =>({
 const menuItems = [
     {
         text: "Dossiers",
-        icon: "none",
+        icon: <Folder />,
         path: '/dossiers'
     },
     {
         text: "Employés",
-        icon: "none",
+        icon: <Group/>,
         path: '/employés'
     },
     {
         text: "Facturation",
-        icon: "none",
+        icon: <Receipt/>,
         path: '/facturation'
     },
     {
         text: "Paiements",
-        icon: "none",
+        icon: <CreditCard/>,
         path: '/paiements'
     },
 ]
@@ -72,17 +72,17 @@ const menuItems = [
 const lowerMenuItems = [
     {
         text: "Information",
-        icon: "none",
+        icon: <Help/>,
         path: '/information'
     },
     {
         text: "Mise a jour",
-        icon: "none",
+        icon: <Update/>,
         path: '/miseajour'
     },
     {
         text: "Compte",
-        icon: "none",
+        icon: <AccountBox/>,
         path: '/compte'
     },
 ]
@@ -94,8 +94,8 @@ export default function Layout({children}) {
 
     return (
         <div className={classes.root}> 
-            {/* App bar*/} 
 
+            {/* App bar*/} 
             <AppBar className={classes.appbar}>
                 <Toolbar>
                     <Typography variant="h6" noWrap className={classes.date}>
@@ -127,7 +127,7 @@ export default function Layout({children}) {
 
       
                 <Divider />
-          {/* Drawer content list */}
+                {/* Drawer content list */}
                 <List>
                     {menuItems.map(item => (
                        <ListItem 
@@ -136,13 +136,15 @@ export default function Layout({children}) {
                             onClick={()=> history.push(item.path)}
                             className={location.pathname === item.path ? classes.active : null}
                         >
-                        <ListItemIcon><AccessAlarm /></ListItemIcon>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText primary={item.text} />
                         </ListItem>
 
                     ))}
                 </List>
+
                 <Divider />
+
                 <List>
                     {lowerMenuItems.map(item => (
                        <ListItem 
@@ -151,7 +153,7 @@ export default function Layout({children}) {
                             onClick={()=> history.push(item.path)}
                             className={location.pathname === item.path ? classes.active : null}
                         >
-                        <ListItemIcon><AccessAlarm /></ListItemIcon>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText primary={item.text} />
                         </ListItem>
 
