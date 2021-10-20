@@ -9,6 +9,7 @@ import { getPosts } from './actions/posts'
 // Routes
 import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
+import Employee from "./Components/pages/Employees/Employee";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -32,6 +33,9 @@ const App = () => {
             </Route>
             <Route exact path="/dev">
               <Dev />
+            </Route>
+            <Route exact path="/employés">
+              <Employee />
             </Route>
           </Switch>
         </Layout>

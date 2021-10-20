@@ -10,13 +10,15 @@ import { ListItemIcon } from '@mui/material';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Folder, Group, Receipt, CreditCard, Help, Update, AccountBox, AccountCircle, DeveloperModeSharp} from '@mui/icons-material';
 
+import PageHeader from './Reusable/PageHeader';
 const drawerWidth = 240
 
 const useStyle = makeStyles((theme) =>({
         page: {
             background: '#f9f9f9',
             width: '100%',
-            padding: theme.spacing(3)
+            padding: theme.spacing(3),
+            height: '100vh'
         },
         drawer: {
             width: drawerWidth
@@ -29,8 +31,7 @@ const useStyle = makeStyles((theme) =>({
         },
         active: {
             background : '#FF7F7F!important',
-            fontWeight: 'bold!important',
-            Typography: 'bold'
+            fontWeight: 'bold!important'
         },
         title: {
             padding: 25,
@@ -172,6 +173,9 @@ export default function Layout({children}) {
 
            <div className={classes.page}>
            <div className={classes.toolbar} />
+                        <PageHeader
+                        title={location.pathname.slice(1).toUpperCase()}
+                        subTitle="..."/>
                 {children}
            </div>
         </div>
