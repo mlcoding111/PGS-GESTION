@@ -10,6 +10,9 @@ import { getPosts } from './actions/posts'
 import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
 import Employee from "./Components/pages/Employees/Employee";
+import Facturation from "./Components/pages/Facturations/Facturations";
+import Paiements from "./Components/pages/Paiements/Paiements";
+import Dossiers from "./Components/pages/Dossiers/Dossiers";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -35,6 +38,15 @@ const App = () => {
               <Dev />
             </Route>
             <Route exact path="/employés">
+              <Employee />
+            </Route>
+            <Route exact path="/dossiers">
+              <Dossiers />
+            </Route>
+            <Route exact path="/paiements">
+              <Paiements/>
+            </Route>
+            <Route exact path="/facturations">
               <Employee />
             </Route>
           </Switch>

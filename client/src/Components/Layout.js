@@ -65,9 +65,9 @@ const menuItems = [
         path: '/employés'
     },
     {
-        text: "Facturation",
+        text: "Facturations",
         icon: <Receipt/>,
-        path: '/facturation'
+        path: '/facturations'
     },
     {
         text: "Paiements",
