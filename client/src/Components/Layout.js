@@ -5,6 +5,8 @@ import {format} from 'date-fns'
 import Logo from '../img/Logo/pgs_vector.svg'
 import {Drawer, CssBaseline, AppBar, Typography, List, Divider, ListItem, Toolbar, Avatar } from '@mui/material'
 
+
+import AddBtn from './Reusable/Buttons/AddBtn';
 // Icons
 import { ListItemIcon } from '@mui/material';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -177,6 +179,7 @@ export default function Layout({children}) {
                         title={location.pathname.slice(1).toUpperCase()}
                         subTitle="..."/>
                 {children}
+                {}<AddBtn />
            </div>
         </div>
     )

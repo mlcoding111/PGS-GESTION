@@ -7,6 +7,7 @@ const Posts = () => {
     const posts = useSelector((state)=> state.posts)
 
     console.log(posts)
+    console.log('post')
     return (
         <div>
             <h1>POSTS</h1>

@@ -24,6 +24,7 @@ const App = () => {
 
   useEffect(()=>{
       dispatch(getPosts())
+      console.log('dispatch')
   }, [dispatch])
   
   return (
@@ -47,7 +48,7 @@ const App = () => {
               <Paiements/>
             </Route>
             <Route exact path="/facturations">
-              <Employee />
+              <Facturation />
             </Route>
           </Switch>
         </Layout>
