@@ -179,7 +179,7 @@ export default function Layout({children}) {
                         title={location.pathname.slice(1).toUpperCase()}
                         subTitle="..."/>
                 {children}
-                {}<AddBtn />
+                {}
            </div>
         </div>
     )

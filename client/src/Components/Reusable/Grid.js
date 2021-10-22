@@ -4,6 +4,8 @@
 import React, { useState, useEffect } from 'react'
 import { DataGrid } from "@mui/x-data-grid";
 
+import AddBtn from './Buttons/AddBtn';
+
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -63,6 +65,7 @@ export default function Grid({col}) {
               checkboxSelection
               disableSelectionOnClick
             />
+            <AddBtn />
       </div>
     )
 }
