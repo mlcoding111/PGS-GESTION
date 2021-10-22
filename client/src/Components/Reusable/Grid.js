@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { DataGrid } from "@mui/x-data-grid";
 
 import AddBtn from './Buttons/AddBtn';
+import DeleteBtn from './Buttons/DeleteBtn';
 
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
@@ -54,6 +55,9 @@ const rows = [
 ];
 
 export default function Grid({col}) {
+
+  const [selectedItems, setSelectedItems] = useState([]);
+
   console.log(col.length)
     return (
         <div style={{ height: 640, width: "100%" }}>
@@ -64,8 +68,11 @@ export default function Grid({col}) {
               rowsPerPageOptions={[10]}
               checkboxSelection
               disableSelectionOnClick
-            />
+              onSelectionModelChange={(newSelection) => {
+                setSelectedItems(newSelection);
+              }}/>
             <AddBtn />
+            <DeleteBtn selectedItems={selectedItems}/> {/* We pass all the selected items */}
       </div>
     )
 }

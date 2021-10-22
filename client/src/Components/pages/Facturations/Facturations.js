@@ -6,6 +6,7 @@ export default function Facturation() {
   return (
     <>
       <Grid col={Columns.facturations}/>
+      
     </>
   );
 }
