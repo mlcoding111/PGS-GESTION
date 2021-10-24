@@ -1,41 +1,66 @@
 import React, {useState, useEffect} from 'react'
+import {Grid, Container, TexField, TextField, Button} from '@mui/material'
+import { makeStyles } from '@mui/styles';
+import useForm from '../../useForm';
 
-import {Grid, Container, TexField, TextField} from '@mui/material'
+const useStyles = makeStyles(theme =>({
+    root: {
+        '& .MuiFormControl-root':{
+        width:'80% !important',
+        margin: theme.spacing(1),
+    }
+        },
+        textField: {
+            width:'80%',
+            margin: `${theme.spacing(1)}!important`
+        }
+}))
 
-const initialFieldValues = {
+const initialFValues = {
     id: 0,
-    fullName: '',
-    email: '',
-    mobile: '',
-    city: '',
-    hireDate: new Date()
-
+    prenom: 's',
+    nom: '',
+    courriel: 's',
+    date_embauche: new Date(),
+    date_naissance: new Date(),
+    reference_nom: '',
+    reference_telephone: '',
+    type_employer: '',
+    actif: false
 }
-const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'prenom', headerName: 'Prénom', width: 130 },
-    { field: 'nom', headerName: 'Nom', width: 130 },
-    { field: 'courriel', headerName: 'Courriel', width: 130 },
-    { field: 'date_embauche', headerName: 'Date embauche', width: 200 },
-    { field: 'date_naissance', headerName: 'Date de naissance', width: 200 },
-    { field: 'reference_nom', headerName: 'Nom reference', width: 200 },
-    { field: 'reference_telephone', headerName: '# Reference', width: 130 },
-    { field: 'type_employe', headerName: 'Type', width: 70 }
-];
 
 export default function EmployeeForm() {
-    
-    const [values, setValues] = useState(initialFieldValues)
-    
-    return (
-        <form>
+
+    const classes = useStyles()
+
+   const {
+        values,
+        setValues,
+        handleInputChange
+    } = useForm(initialFValues);
+
+
+        return (
+        <form classes={classes.root} name="employeeForm">
             <Grid container>
                 <Grid item xs={6}>
                     <TextField
                     variant="outlined"
-                    label="Nom Complet"
-                    value={values.fullName}
-                    />
+                    label="Prenom"
+                    name="prenom"
+                    onChange={handleInputChange}
+                    value={values.prenom}
+                    className={classes.textField}
+                    />  
+                    <TextField
+                    variant="outlined"
+                    label="Courriel"
+                    name="courriel"
+                    onChange={handleInputChange}
+                    value={values.courriel}
+                    className={classes.textField}
+                    />               
+                    <Button onClick={()=> console.log(values)}>Salut</Button>   
                 </Grid>
             </Grid>
         </form>

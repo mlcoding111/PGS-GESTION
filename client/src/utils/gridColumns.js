@@ -12,7 +12,8 @@ export class Columns{
             { field: 'date_naissance', headerName: 'Date de naissance', width: 200 },
             { field: 'reference_nom', headerName: 'Nom reference', width: 200 },
             { field: 'reference_telephone', headerName: '# Reference', width: 130 },
-            { field: 'type_employe', headerName: 'Type', width: 70 }
+            { field: 'type_employer', headerName: 'Type', width: 70 },
+            { field: 'actif', headerName: 'Actif', width: 70 }
         ];
         return columns
     }

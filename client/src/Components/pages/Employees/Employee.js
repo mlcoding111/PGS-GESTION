@@ -5,8 +5,7 @@ import {Columns} from '../../../utils/gridColumns'
 export default function Employee() {
   return (
     <>
-      <Grid col={Columns.employees}/>
-      
+      <Grid col={Columns.employees}/>      
     </>
   );
 }

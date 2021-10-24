@@ -10,6 +10,7 @@ import { getPosts } from './actions/posts'
 import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
 import Employee from "./Components/pages/Employees/Employee";
+import AddEmployee from "./Components/pages/Employees/Add/AddEmployee";
 import Facturation from "./Components/pages/Facturations/Facturations";
 import Paiements from "./Components/pages/Paiements/Paiements";
 import Dossiers from "./Components/pages/Dossiers/Dossiers";
@@ -40,6 +41,9 @@ const App = () => {
             </Route>
             <Route exact path="/employés">
               <Employee />
+            </Route>
+            <Route exact path="/employés/ajout">
+              <AddEmployee />
             </Route>
             <Route exact path="/dossiers">
               <Dossiers />
