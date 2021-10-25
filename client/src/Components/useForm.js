@@ -1,6 +1,20 @@
 import React, {useState} from 'react'
+import { makeStyles } from '@mui/styles';
 
-export default function useForm(initialFValues) {
+const useStyles = makeStyles(theme =>({
+        root: {
+            '& .MuiFormControl-root': {
+                width: "80%!important",
+            }
+        },
+        textField: {
+            width:'80%',
+            margin: `${theme.spacing(1)}!important`
+        }
+}))
+
+export function useForm(initialFValues) {
+    
    const [values, setValues] = useState(initialFValues);
 
     const handleInputChange = e => {
@@ -9,6 +23,7 @@ export default function useForm(initialFValues) {
                ...values,
                [name]: value
            })
+           console.log({name, value})
        }
 
     return {
@@ -16,4 +31,13 @@ export default function useForm(initialFValues) {
         setValues,
         handleInputChange
     }
+}
+
+export function Form(props) {
+    const classes = useStyles()
+    return (
+        <form className={classes.root}>
+            {props.children}
+        </form>
+    )
 }

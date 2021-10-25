@@ -1,26 +1,25 @@
+// https://youtu.be/-XKaSCU0ZLM?t=1240
 import React, {useState, useEffect} from 'react'
-import {Grid, Container, TexField, TextField, Button} from '@mui/material'
+import {Grid, Container, TexField, TextField, Button, FormControl, RadioGroup, Radio} from '@mui/material'
 import { makeStyles } from '@mui/styles';
-import useForm from '../../useForm';
+import {useForm, Form} from '../../useForm';
+import { FormControlLabel, FormLabel } from '@material-ui/core';
+
+import Input from '../../controls/Input';
 
 const useStyles = makeStyles(theme =>({
-    root: {
-        '& .MuiFormControl-root':{
-        width:'80% !important',
-        margin: theme.spacing(1),
-    }
-        },
         textField: {
             width:'80%',
             margin: `${theme.spacing(1)}!important`
         }
 }))
 
+
 const initialFValues = {
     id: 0,
-    prenom: 's',
+    prenom: '',
     nom: '',
-    courriel: 's',
+    courriel: '',
     date_embauche: new Date(),
     date_naissance: new Date(),
     reference_nom: '',
@@ -41,28 +40,38 @@ export default function EmployeeForm() {
 
 
         return (
-        <form classes={classes.root} name="employeeForm">
+            <Form  name="employeeForm">
             <Grid container>
                 <Grid item xs={6}>
-                    <TextField
-                    variant="outlined"
-                    label="Prenom"
-                    name="prenom"
-                    onChange={handleInputChange}
-                    value={values.prenom}
-                    className={classes.textField}
-                    />  
-                    <TextField
-                    variant="outlined"
-                    label="Courriel"
-                    name="courriel"
-                    onChange={handleInputChange}
-                    value={values.courriel}
-                    className={classes.textField}
-                    />               
-                    <Button onClick={()=> console.log(values)}>Salut</Button>   
+                    <Input
+                        name="prenom"
+                        label="Prenom"
+                        value={values.fullName}
+                        onChange={handleInputChange}
+                    />
+                    <Input
+                        name="courriel"
+                        label="Courriel"
+                        value={values.courriel}
+                        onChange={handleInputChange}
+                    />
+        
+                </Grid>
+                <Grid item xs={6}>
+                    <FormControl>
+                        <FormLabel>Type</FormLabel>
+                        <RadioGroup row
+                        name="employeeType"
+                        onChange={handleInputChange}
+                        value={values.type_employer}>
+                            <FormControlLabel value="a1" control={<Radio/>} label="A1"/>
+                            <FormControlLabel value="a2" control={<Radio/>} label="A2"/>
+                            <FormControlLabel value="a3" control={<Radio/>} label="A3"/>
+                            <FormControlLabel value="c" control={<Radio/>} label="C"/>
+                        </RadioGroup>
+                    </FormControl>
                 </Grid>
             </Grid>
-        </form>
+            </Form>
     )
 }
