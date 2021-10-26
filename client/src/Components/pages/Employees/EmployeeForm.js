@@ -1,11 +1,11 @@
 // https://youtu.be/-XKaSCU0ZLM?t=1240
 import React, {useState, useEffect} from 'react'
-import {Grid, Container, TexField, TextField, Button, FormControl, RadioGroup, Radio} from '@mui/material'
+import {Grid, Container, TexField, TextField, Button, FormControl} from '@mui/material'
 import { makeStyles } from '@mui/styles';
 import {useForm, Form} from '../../useForm';
 import { FormControlLabel, FormLabel } from '@material-ui/core';
 
-import Input from '../../controls/Input';
+import Controls from '../../controls/Controls';
 
 const useStyles = makeStyles(theme =>({
         textField: {
@@ -14,6 +14,12 @@ const useStyles = makeStyles(theme =>({
         }
 }))
 
+const employeeTypes = [
+    { id: 'a1', title: 'A1'},
+    { id: 'a2', title: 'A2'},
+    { id: 'a3', title: 'A3'},
+    { id: 'c', title: 'C'}
+]
 
 const initialFValues = {
     id: 0,
@@ -24,13 +30,13 @@ const initialFValues = {
     date_naissance: new Date(),
     reference_nom: '',
     reference_telephone: '',
-    type_employer: '',
+    type_employer: 'a1',
+    gender: 'male',
     actif: false
 }
 
-export default function EmployeeForm() {
 
-    const classes = useStyles()
+export default function EmployeeForm() {
 
    const {
         values,
@@ -43,13 +49,13 @@ export default function EmployeeForm() {
             <Form  name="employeeForm">
             <Grid container>
                 <Grid item xs={6}>
-                    <Input
+                    <Controls.Input
                         name="prenom"
                         label="Prenom"
-                        value={values.fullName}
+                        value={values.prenom}
                         onChange={handleInputChange}
                     />
-                    <Input
+                    <Controls.Input
                         name="courriel"
                         label="Courriel"
                         value={values.courriel}
@@ -58,18 +64,14 @@ export default function EmployeeForm() {
         
                 </Grid>
                 <Grid item xs={6}>
-                    <FormControl>
-                        <FormLabel>Type</FormLabel>
-                        <RadioGroup row
-                        name="employeeType"
+                    <Controls.RadioGroup
+                        name="type_employer"
+                        label="Type de l'employer"
+                        value={values.type_employer}
                         onChange={handleInputChange}
-                        value={values.type_employer}>
-                            <FormControlLabel value="a1" control={<Radio/>} label="A1"/>
-                            <FormControlLabel value="a2" control={<Radio/>} label="A2"/>
-                            <FormControlLabel value="a3" control={<Radio/>} label="A3"/>
-                            <FormControlLabel value="c" control={<Radio/>} label="C"/>
-                        </RadioGroup>
-                    </FormControl>
+                        items={employeeTypes}
+                    />
+                  
                 </Grid>
             </Grid>
             </Form>
