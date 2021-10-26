@@ -84,6 +84,12 @@ export default function EmployeeForm() {
                         onChange={handleInputChange}
                         options={departementdata}
                     />
+                    <Controls.CheckBox
+                        name="actif"
+                        label="Actif"
+                        value={values.actif}
+                        onChange={handleInputChange}
+                    />
                   
                 </Grid>
             </Grid>
