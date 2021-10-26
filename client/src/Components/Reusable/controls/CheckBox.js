@@ -5,14 +5,15 @@ export default function CheckBox(props) {
 
     const { name, label, value, onChange } = props;
 
+    // Convert target to a value so onChange event from useForm can handle it
     const convertToDefaultEventParameter = (name, value) => ({
-        target:{
+        target: {
             name, value
         }
     })
 
     return (
-        <FormControl>
+        <FormControl >
             <FormControlLabel
                 control={<MuiCheckBox
                     name={name}

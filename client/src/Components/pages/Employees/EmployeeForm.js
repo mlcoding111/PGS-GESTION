@@ -78,15 +78,23 @@ export default function EmployeeForm() {
                         items={employeeTypes}
                     />
                     <Controls.Select
+
                         name="departementId"
                         label="Departement"
                         value={values.departementId}
                         onChange={handleInputChange}
                         options={departementdata}
                     />
+                    <Controls.DatePicker
+
+                        name="date_embauche"
+                        label="Date d'embauche"
+                        value={values.date_embauche}
+                        onChange={handleInputChange}
+                    />
                     <Controls.CheckBox
                         name="actif"
-                        label="Actif"
+                        label="Employer actif"
                         value={values.actif}
                         onChange={handleInputChange}
                     />
