@@ -5,6 +5,8 @@ import { makeStyles } from '@mui/styles';
 import {useForm, Form} from '../../useForm';
 import Controls from '../../Reusable/controls/Controls';
 
+
+
 const useStyles = makeStyles(theme =>({
         textField: {
             width:'80%',
@@ -29,10 +31,16 @@ const initialFValues = {
     reference_nom: '',
     reference_telephone: '',
     type_employer: 'a1',
-    gender: 'male',
+    departementId: '',
     actif: false
 }
 
+const departementdata = [
+    {id: '1', title: 'Apprenti 1'},
+    {id: '2', title: 'Apprenti 2'},
+    {id: '3', title: 'Apprenti 3'},
+    {id: '4', title: 'Compagnon'},
+]
 
 export default function EmployeeForm() {
 
@@ -68,6 +76,13 @@ export default function EmployeeForm() {
                         value={values.type_employer}
                         onChange={handleInputChange}
                         items={employeeTypes}
+                    />
+                    <Controls.Select
+                        name="departementId"
+                        label="Departement"
+                        value={values.departementId}
+                        onChange={handleInputChange}
+                        options={departementdata}
                     />
                   
                 </Grid>

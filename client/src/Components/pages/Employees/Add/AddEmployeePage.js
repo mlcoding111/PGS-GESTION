@@ -16,7 +16,7 @@ export default function AddEmployee() {
 
     return (
         <div>
-            <Paper classes={classes.pageContent} sx={{ p: 2, m : 5 }}>
+            <Paper className={classes.pageContent} sx={{ p: 2, m : 5 }}>
                 <EmployeeForm />
             </Paper>
         </div>
