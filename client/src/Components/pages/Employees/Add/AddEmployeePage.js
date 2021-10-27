@@ -1,5 +1,5 @@
 import React from 'react'
-import EmployeeForm from '../EmployeeForm'
+import EmployeeForm from '../Form/EmployeeForm'
 import { makeStyles } from '@mui/styles';
 import { Paper } from '@mui/material'
 

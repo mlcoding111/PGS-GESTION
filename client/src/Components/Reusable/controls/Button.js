@@ -4,7 +4,8 @@ import React from 'react'
 
 const useStyles = makeStyles(theme=>({
     root:{
-        margin: theme.spacing(0.5)
+        margin: theme.spacing(0.5),
+        marginRight: "1rem!important"
     },
     label: {
         textTransform: 'none'

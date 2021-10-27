@@ -9,7 +9,7 @@ import { getPosts } from './actions/posts'
 // Routes
 import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
-import Employee from "./Components/pages/Employees/Employee";
+import Employee from "./Components/pages/Employees/EmployeeGrid";
 import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
 import Facturation from "./Components/pages/Facturations/Facturations";
 import Paiements from "./Components/pages/Paiements/Paiements";

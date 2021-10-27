@@ -12,6 +12,7 @@ export class FormFields{
             reference_nom: '',
             reference_telephone: '',
             type_employer: 'a1',
+            telephone: '',
             departementId: '',
             actif: false
         }
