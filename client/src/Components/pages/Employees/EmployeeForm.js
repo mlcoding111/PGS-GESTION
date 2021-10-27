@@ -12,6 +12,11 @@ const useStyles = makeStyles(theme =>({
         textField: {
             width:'80%',
             margin: `${theme.spacing(1)}!important`
+        },
+        grid :{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center"
         }
 }))
 
@@ -19,6 +24,8 @@ const { initialFValues, departementdata, employeeTypes } = Employee.FormFields
 
 
 export default function EmployeeForm() {
+
+    const classes = useStyles()
 
    const {
         values,
@@ -28,9 +35,9 @@ export default function EmployeeForm() {
 
 
         return (
-            <Form  name="employeeForm">
-            <Grid container>
-                <Grid item xs={6}>
+            <Form name="employeeForm">
+            <Grid container className={classes.grid} >
+                <Grid item xs={6} >
                     <Controls.Input
                         name="prenom"
                         label="Prenom"
@@ -46,15 +53,14 @@ export default function EmployeeForm() {
         
                 </Grid>
                 <Grid item xs={6}>
-                    <Controls.RadioGroup
+                    {/* <Controls.RadioGroup
                         name="type_employer"
                         label="Type de l'employer"
                         value={values.type_employer}
                         onChange={handleInputChange}
                         items={employeeTypes}
-                    />
+                    /> */}
                     <Controls.Select
-
                         name="departementId"
                         label="Departement"
                         value={values.departementId}

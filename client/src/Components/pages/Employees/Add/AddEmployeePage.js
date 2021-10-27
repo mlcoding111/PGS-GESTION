@@ -5,8 +5,7 @@ import { Paper } from '@mui/material'
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
-        margin: theme.spacing(5),
-        padding: theme.spacing(3)
+        marginRight: "auto"
     }
 }))
 
@@ -15,10 +14,10 @@ export default function AddEmployee() {
     const classes = useStyles()
 
     return (
-        <div>
+        <>
             <Paper className={classes.pageContent} sx={{ p: 2, m : 5 }}>
                 <EmployeeForm />
             </Paper>
-        </div>
+        </>
     )
 }

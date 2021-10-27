@@ -5,11 +5,10 @@ const useStyles = makeStyles(theme =>({
         root: {
             '& .MuiFormControl-root': {
                 width: "80%!important",
-            }
-        },
-        textField: {
-            width:'80%',
-            margin: `${theme.spacing(1)}!important`
+                margin: `${theme.spacing(1)}!important`
+            },
+            display: "flex!important",
+            justifyContent: "center!important"
         }
 }))
 
