@@ -5,8 +5,7 @@ import {Columns} from '../../../utils/gridColumns'
 export default function Dossiers() {
   return (
     <>
-      <Grid col={Columns.dossiers}/>
-      
+      <Grid col={Columns.dossiers}/>      
     </>
   );
 }

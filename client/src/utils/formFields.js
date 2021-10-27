@@ -37,4 +37,27 @@ export class FormFields{
             departementdata
         }        
     }
+
+    static get Dossiers(){
+        const initialFValues = {
+            nom_client: "",
+            numero_client: "",
+            type_travaux: "",
+            date_accepter: new Date(),
+            date_ajouter: new Date(),
+            montant: "",
+            numero_facture: "",
+        }
+
+        const clientType = [
+            { id: 'direct', title: 'Client direct'},
+            { id: 'assurance', title: 'Assurance'},
+        ]
+
+        return {
+            clientType,
+            initialFValues
+        }
+       
+    }
 }
