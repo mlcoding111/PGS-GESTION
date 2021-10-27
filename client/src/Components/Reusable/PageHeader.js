@@ -25,7 +25,8 @@ export default function PageHeader({title, subTitle, icon}) {
                 <div>
                     <Typography 
                     variant="h5"
-                    component="div">
+                    component="div"
+                    sx={{ fontWeight: 'bold!important' }}>
                     {title}    
                     </Typography>
                     {/* <Typography 
