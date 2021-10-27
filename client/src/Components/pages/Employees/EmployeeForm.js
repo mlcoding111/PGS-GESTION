@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 import {useForm, Form} from '../../useForm';
 import Controls from '../../Reusable/controls/Controls';
 
+import { Employee } from '../../../utils/Sections/Employee';
 
 
 const useStyles = makeStyles(theme =>({
@@ -14,33 +15,8 @@ const useStyles = makeStyles(theme =>({
         }
 }))
 
-const employeeTypes = [
-    { id: 'a1', title: 'A1'},
-    { id: 'a2', title: 'A2'},
-    { id: 'a3', title: 'A3'},
-    { id: 'c', title: 'C'}
-]
+const { initialFValues, departementdata, employeeTypes } = Employee.FormFields
 
-const initialFValues = {
-    id: 0,
-    prenom: '',
-    nom: '',
-    courriel: '',
-    date_embauche: new Date(),
-    date_naissance: new Date(),
-    reference_nom: '',
-    reference_telephone: '',
-    type_employer: 'a1',
-    departementId: '',
-    actif: false
-}
-
-const departementdata = [
-    {id: '1', title: 'Apprenti 1'},
-    {id: '2', title: 'Apprenti 2'},
-    {id: '3', title: 'Apprenti 3'},
-    {id: '4', title: 'Compagnon'},
-]
 
 export default function EmployeeForm() {
 

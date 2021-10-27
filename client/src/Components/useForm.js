@@ -23,7 +23,7 @@ export function useForm(initialFValues) {
                ...values,
                [name]: value
            })
-           console.log({name, value})
+           console.log({ name, value })
        }
 
     return {
