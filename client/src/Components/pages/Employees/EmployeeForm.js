@@ -98,6 +98,12 @@ export default function EmployeeForm() {
                         value={values.actif}
                         onChange={handleInputChange}
                     />
+
+                    <div>
+                        <Controls.Button text="Submit" type="Submit"/>
+                        <Controls.Button text="Reset" color="error" type="Submit"/>
+                    </div>
+
                   
                 </Grid>
             </Grid>
