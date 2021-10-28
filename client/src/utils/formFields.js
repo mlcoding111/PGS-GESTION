@@ -61,4 +61,45 @@ export class FormFields{
         }
        
     }
+
+    static get Paiements(){
+        const initialFValues = {
+            fournisseur: "",
+            montant: "",
+            date: new Date(),
+            faitPar: "",
+            accepterPar: "",
+            numeroFacture: ""
+        }
+
+        return {
+            initialFValues
+        }
+       
+    }
+
+    static get Facturations(){
+        const initialFValues = {
+            nomClient: "",
+            montant: "",
+            dateEnvoyerComptable: new Date(),
+            dateRecu: new Date(),
+            dateEnvoyerClient: new Date(),
+            datePayer: new Date(),
+            numéroFacture: "",
+            payer: "",
+            montantRecu: ""
+        }
+
+        const statusPaiement = [
+            { id: 'payer', title: 'Payer'},
+            { id: 'non_payer', title: 'Non payer'},
+        ]
+
+        return {
+            initialFValues,
+            statusPaiement
+        }
+       
+    }
 }
