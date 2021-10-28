@@ -58,7 +58,7 @@ export default function Grid({col}) {
 
   const [selectedItems, setSelectedItems] = useState([]);
 
-  console.log(col.length)
+
     return (
         <div style={{ height: 640, width: "100%" }}>
             <DataGrid

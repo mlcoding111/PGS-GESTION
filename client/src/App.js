@@ -13,7 +13,7 @@ import Employee from "./Components/pages/Employees/EmployeeGrid";
 import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
 import Facturation from "./Components/pages/Facturations/Facturations";
 import Paiements from "./Components/pages/Paiements/Paiements";
-import Dossiers from "./Components/pages/Dossiers/Dossiers";
+import Dossiers from "./Components/pages/Dossiers/DossiersGrid";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
