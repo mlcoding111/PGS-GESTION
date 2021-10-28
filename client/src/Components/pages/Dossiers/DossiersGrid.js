@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from '../../Reusable/Grid'
-import { Dossiers as DossiersData } from "../../../utils/Sections/Dossiers";
+import { Dossier as DossiersData } from "../../../utils/Sections/Dossier";
 
 export default function Dossiers() {
   return (

@@ -86,7 +86,7 @@ export class FormFields{
             dateRecu: new Date(),
             dateEnvoyerClient: new Date(),
             datePayer: new Date(),
-            numéroFacture: "",
+            numeroFacture: "",
             payer: "",
             montantRecu: ""
         }

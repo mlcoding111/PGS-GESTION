@@ -9,10 +9,16 @@ import { getPosts } from './actions/posts'
 // Routes
 import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
+
 import Employee from "./Components/pages/Employees/EmployeeGrid";
 import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
-import Facturation from "./Components/pages/Facturations/Facturations";
-import Paiements from "./Components/pages/Paiements/Paiements";
+
+import Facturation from "./Components/pages/Facturations/FacturationsGrid";
+import AddFacturationPage from "./Components/pages/Facturations/Add/AddFacturationPage";
+
+import Paiements from "./Components/pages/Paiements/PaiementsGrid";
+import AddPaiementPage from "./Components/pages/Paiements/Add/AddPaiementPage";
+
 import Dossiers from "./Components/pages/Dossiers/DossiersGrid";
 import AddDossier from "./Components/pages/Dossiers/Add/AddDossiersPage";
 
@@ -55,8 +61,14 @@ const App = () => {
             <Route exact path="/paiements">
               <Paiements/>
             </Route>
+            <Route exact path="/paiements/ajout">
+              <AddPaiementPage />
+            </Route>
             <Route exact path="/facturations">
               <Facturation />
+            </Route>
+            <Route exact path="/facturations/ajout">
+              <AddFacturationPage />
             </Route>
           </Switch>
         </Layout>

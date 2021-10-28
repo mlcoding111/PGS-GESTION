@@ -5,8 +5,7 @@ import {Columns} from '../../../utils/gridColumns'
 export default function Facturation() {
   return (
     <>
-      <Grid col={Columns.facturations}/>
-      
+      <Grid col={Columns.facturations}/>      
     </>
   );
 }

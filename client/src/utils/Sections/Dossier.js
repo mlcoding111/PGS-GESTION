@@ -1,7 +1,7 @@
 import { Columns } from "../gridColumns";
 import { FormFields } from "../formFields";
 
-export class Dossiers{
+export class Dossier{
     static get GridColumns(){
         return Columns.dossiers
     }

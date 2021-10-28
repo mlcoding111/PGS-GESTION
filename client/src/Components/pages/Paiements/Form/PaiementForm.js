@@ -7,60 +7,58 @@ import { Dossier } from "../../../../utils/Sections/Dossier";
 
 const { initialFValues, clientType } = Dossier.FormFields;
 
-export default function DossierForm() {
+export default function PaiementForm() {
   const classes = FormStyle();
   const { values, setValues, handleInputChange } = useForm(initialFValues);
+
+  // fournisseur: "",
+  // montant: "",
+  // date: new Date(),
+  // faitPar: "",
+  // accepterPar: "",
+  // numeroFacture: ""
   return (
-    <Form name="dossierForm">
+    <Form name="paiementForm">
       <Grid container className={classes.grid}>
         <Grid item xs={6}>
           <Controls.Input
-            name="nom_client"
-            label="Nom"
-            value={values.nom_client}
+            name="fournisseur"
+            label="Fournisseur"
+            value={values.fournisseur}
             onChange={handleInputChange}
           />
-
-          <Controls.DatePicker
-            name="date_accepter"
-            label="Date accepter"
-            value={values.date_accepter}
-            onChange={handleInputChange}
-          />
-
           <Controls.Input
-            name="montant"
-            label="Montant de la facture"
-            value={values.montant}
+            name="faitPar"
+            label="Fait par.."
+            value={values.faitPar}
             onChange={handleInputChange}
           />
-          <Controls.Select
-            name="type_travaux"
-            label="Type de travaux"
-            value={values.type_travaux}
+          <Controls.Input
+            name="accepterPar"
+            label="Accepter par.."
+            value={values.accepterPar}
             onChange={handleInputChange}
-            options={clientType}
           />
         </Grid>
 
         <Grid item xs={6}>
           <Controls.Input
-            name="numero_client"
-            label="Numéro du client"
-            value={values.numero_client}
+            name="montant"
+            label="Montant"
+            value={values.montant}
             onChange={handleInputChange}
           />
           <Controls.DatePicker
-            name="date_ajouter"
-            label="Date ajouter"
-            value={values.date_ajouter}
+            name="date"
+            label="Date"
+            value={values.date}
             onChange={handleInputChange}
           />
 
           <Controls.Input
-            name="numero_facture"
-            label="Numéro de la facture"
-            value={values.numero_facture}
+            name="numeroFacture"
+            label="Numéro de la facture.."
+            value={values.numeroFacture}
             onChange={handleInputChange}
           />
         </Grid>
