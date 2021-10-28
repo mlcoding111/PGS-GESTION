@@ -1,33 +1,15 @@
 // https://youtu.be/-XKaSCU0ZLM?t=1240
 import React from "react";
 import { Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { useForm, Form } from "../../../useForm";
 import Controls from "../../../Reusable/controls/Controls";
-
+import { FormStyle } from "../../../Reusable/Styles/FormStyle";
 import { Employee } from "../../../../utils/Sections/Employee";
-
-const useStyles = makeStyles((theme) => ({
-  textField: {
-    width: "80%",
-    margin: `${theme.spacing(1)}!important`,
-  },
-  grid: {
-    textAlign: "center",
-    display: "flex",
-    justifyContent: "center",
-  },
-  submit: {
-      textAlign: "left!important",
-      marginLeft: "4.5rem!important",
-      marginTop: "1rem!important"
-  }
-}));
 
 const { initialFValues, departementdata, employeeTypes } = Employee.FormFields;
 
 export default function EmployeeForm() {
-  const classes = useStyles();
+  const classes = FormStyle()
 
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
