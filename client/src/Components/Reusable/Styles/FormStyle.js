@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const FormStyle = makeStyles((theme) => ({
     grid: {
-      textAlign: "center",
+      textAlign: "center!important",
       display: "flex",
       justifyContent: "center",
     },

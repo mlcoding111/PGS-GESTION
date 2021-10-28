@@ -40,6 +40,7 @@ export class FormFields{
 
     static get Dossiers(){
         const initialFValues = {
+            id: 0,
             nom_client: "",
             numero_client: "",
             type_travaux: "",

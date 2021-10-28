@@ -10,7 +10,6 @@ const { initialFValues, departementdata, employeeTypes } = Employee.FormFields;
 
 export default function EmployeeForm() {
   const classes = FormStyle()
-
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
   return (

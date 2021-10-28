@@ -7,6 +7,6 @@ export class Dossiers{
     }
 
     static get FormFields(){
-        return FormFields.dossiers
+        return FormFields.Dossiers
     }
 }

@@ -14,6 +14,7 @@ import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
 import Facturation from "./Components/pages/Facturations/Facturations";
 import Paiements from "./Components/pages/Paiements/Paiements";
 import Dossiers from "./Components/pages/Dossiers/DossiersGrid";
+import AddDossier from "./Components/pages/Dossiers/Add/AddDossiersPage";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -47,6 +48,9 @@ const App = () => {
             </Route>
             <Route exact path="/dossiers">
               <Dossiers />
+            </Route>
+            <Route exact path="/dossiers/ajout">
+              <AddDossier />
             </Route>
             <Route exact path="/paiements">
               <Paiements/>
