@@ -42,11 +42,11 @@ export default function EmployeeForm() {
             onChange={handleInputChange}
           />
           <Controls.Select
-            name="departementId"
-            label="Departement"
-            value={values.departementId}
+            name="type_employer"
+            label="Type d'employer"
+            value={values.type_employer}
             onChange={handleInputChange}
-            options={departementdata}
+            options={employeeTypes}
           />
         </Grid>
         <Grid item xs={6}>

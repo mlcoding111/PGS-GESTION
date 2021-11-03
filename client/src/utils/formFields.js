@@ -3,7 +3,6 @@ export class FormFields{
     static get Employee(){
 
         const initialFValues = {
-            id: 0,
             prenom: '',
             nom: '',
             courriel: '',
