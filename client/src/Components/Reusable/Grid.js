@@ -54,16 +54,17 @@ const rows = [
     { id: 10, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function Grid({col}) {
+export default function Grid({col, data}) {
 
   const [selectedItems, setSelectedItems] = useState([]);
 
 
     return (
         <div style={{ height: 640, width: "100%" }}>
+          {console.log(data)}
             <DataGrid
-              rows={rows}
-              columns={col}
+              rows={rows} // Need to be data
+              columns={columns}
               pageSize={10}
               rowsPerPageOptions={[10]}
               checkboxSelection

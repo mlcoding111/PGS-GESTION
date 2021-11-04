@@ -5,6 +5,7 @@ import Layout from "./Components/Layout";
 // Redux import
 import { useDispatch } from "react-redux";
 import { getPosts } from './actions/posts'
+import { getDossiers } from './actions/dossiers'
 
 // Routes
 import Home from "./Components/Home";
@@ -32,6 +33,8 @@ const App = () => {
 
   useEffect(()=>{
       dispatch(getPosts())
+      dispatch(getDossiers())
+  
 
   }, [dispatch])
   

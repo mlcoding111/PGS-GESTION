@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const dossier = mongoose.Schema({
+    id: Number,
     nom_client: String,
     numero_client: String,
     courriel: String,
