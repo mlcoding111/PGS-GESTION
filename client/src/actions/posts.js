@@ -10,10 +10,6 @@ export const getPosts = () => async (dispatch) => { // => async (dispatch) becau
     } catch (error) {
         console.log(error.message)
     }
-    
-    const action = { type: 'FETCH_ALL', payload: [] }
-
-    dispatch(action)
 }
 
 

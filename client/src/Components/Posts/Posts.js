@@ -1,4 +1,5 @@
 import React from 'react'
+import {CircleNotifications}  from '@mui/icons-material'
 import Post from './Post/Post'
 
 import { useSelector } from 'react-redux'
@@ -6,12 +7,16 @@ import { useSelector } from 'react-redux'
 const Posts = () => {
     const posts = useSelector((state)=> state.posts)
     
+    console.log('THIS : ', posts)
+    
     return (
-        <div>
-            <h1>POSTS</h1>
-            <Post />
-            <Post />
-        </div>
+        !posts.length ? <CircleNotifications/> : (
+            <>
+                {posts.map((post, key)=>(
+                    <h1 key={key}>{post.title}s</h1>
+                ))}
+            </>
+        )
     )
 }
 

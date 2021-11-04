@@ -32,7 +32,7 @@ const App = () => {
 
   useEffect(()=>{
       dispatch(getPosts())
-      console.log('dispatch')
+
   }, [dispatch])
   
   return (
