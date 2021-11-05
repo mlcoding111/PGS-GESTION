@@ -1,11 +1,11 @@
 import React from "react";
 import Grid from '../../Reusable/Grid'
-import {Columns} from '../../../utils/gridColumns'
+import { Facturations as FacturationData } from "../../../utils/Sections/Facturations";
 
 export default function Facturation() {
   return (
     <>
-      <Grid col={Columns.facturations}/>      
+      <Grid col={FacturationData.GridColumns}/>      
     </>
   );
 }

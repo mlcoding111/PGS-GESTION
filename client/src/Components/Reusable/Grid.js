@@ -64,7 +64,7 @@ export default function Grid({col, data}) {
           {console.log(data)}
             <DataGrid
               rows={rows} // Need to be data
-              columns={columns}
+              columns={col}
               pageSize={10}
               rowsPerPageOptions={[10]}
               checkboxSelection

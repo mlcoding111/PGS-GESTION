@@ -1,5 +1,5 @@
-import { Columns } from "../gridColumns";
-import { FormFields } from "../formFields";
+import { Columns } from "../Grid/Columns";
+import { FormFields } from "../Form/formFields";
 
 export class Dossier{
     static get GridColumns(){

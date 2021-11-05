@@ -1,11 +1,11 @@
 import React from "react";
 import Grid from '../../Reusable/Grid'
-import {Columns} from '../../../utils/gridColumns'
+import { Paiements as PaiementData } from "../../../utils/Sections/Paiements";
 
 export default function Paiements() {
   return (
     <>
-      <Grid col={Columns.paiements}/>
+      <Grid col={PaiementData.GridColumn}/>
     </>
   );
 }
