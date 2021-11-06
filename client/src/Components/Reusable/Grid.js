@@ -57,13 +57,15 @@ const rows = [
 export default function Grid({col, data}) {
 
   const [selectedItems, setSelectedItems] = useState([]);
-
+    
+    data && data.map((data, index)=>{ // If data is not empty, assign id for each data
+      data['id'] = index += 1
+    })
 
     return (
-        <div style={{ height: 640, width: "100%" }}>
-          {console.log(data)}
+        !data.length ? <h1>Empty</h1> : (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
-              rows={rows} // Need to be data
+              rows={data} // Need to be data
               columns={col}
               pageSize={10}
               rowsPerPageOptions={[10]}
@@ -71,9 +73,10 @@ export default function Grid({col, data}) {
               disableSelectionOnClick
               onSelectionModelChange={(newSelection) => {
                 setSelectedItems(newSelection);
+                console.log(newSelection)
               }}/>
             <AddBtn />
             <DeleteBtn selectedItems={selectedItems}/> {/* We pass all the selected items */}
       </div>
-    )
+    ))
 }

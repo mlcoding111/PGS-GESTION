@@ -5,7 +5,7 @@ import { Paiements as PaiementData } from "../../../utils/Sections/Paiements";
 export default function Paiements() {
   return (
     <>
-      <Grid col={PaiementData.GridColumn}/>
+      <Grid col={PaiementData.GridColumn} data={[]}/>
     </>
   );
 }

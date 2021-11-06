@@ -1,3 +1,2 @@
 > Implementer redux avec tous les sections
-> Ajouter une "Rows" dans réusable pour chaque section
 > Ajouter un auto-increment pour le backend (id pour dataGrid de MUI)

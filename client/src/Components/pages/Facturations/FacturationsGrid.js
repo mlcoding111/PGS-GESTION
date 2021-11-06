@@ -5,7 +5,7 @@ import { Facturations as FacturationData } from "../../../utils/Sections/Factura
 export default function Facturation() {
   return (
     <>
-      <Grid col={FacturationData.GridColumns}/>      
+      <Grid col={FacturationData.GridColumns} data={[]}/>      
     </>
   );
 }

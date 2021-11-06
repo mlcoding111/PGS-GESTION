@@ -5,7 +5,7 @@ import { Employee as EmployeeData } from "../../../utils/Sections/Employee";
 export default function Employee() {
   return (
     <>
-      <Grid col={EmployeeData.GridColumns}/>      
+      <Grid col={EmployeeData.GridColumns} data={[]}/>      
     </>
   );
 }
