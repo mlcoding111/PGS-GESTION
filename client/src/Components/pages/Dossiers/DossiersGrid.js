@@ -7,7 +7,9 @@ export default function Dossiers() {
   const dossiers = useSelector((state)=> state.dossiers)
 
   console.log('THIS DOSSIER: ', dossiers)
+
   return (
+    
     <>
       <Grid col={DossiersData.GridColumns} data={dossiers}/>      
     </>

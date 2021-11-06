@@ -19,6 +19,6 @@ export const createFacturation = (newFacturation) => axios.post(`${url}facturati
 export const fetchPaiements = () => axios.get(`${url}paiements`)
 export const createPaiement = (newPaiement) => axios.post(`${url}paiements`, newPaiement)
 
-// Employers
-export const fetchEmployers = () => axios.get(`${url}employers`)
-export const createEmployer = (newEmployer) => axios.post(`${url}employers`, newEmployer)
+// Employés
+export const fetchEmployers = () => axios.get(`${url}employés`)
+export const createEmployer = (newEmployer) => axios.post(`${url}employés`, newEmployer)

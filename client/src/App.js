@@ -6,6 +6,11 @@ import Layout from "./Components/Layout";
 import { useDispatch } from "react-redux";
 import { getPosts } from './actions/posts'
 import { getDossiers } from './actions/dossiers'
+import { getPaiements } from './actions/paiements'
+import { getFacturations } from './actions/facturations'
+import { getEmployers } from './actions/employers'
+
+
 
 // Routes
 import Home from "./Components/Home";
@@ -32,11 +37,10 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-      dispatch(getPosts())
-      dispatch(getDossiers())
-  
+    dispatch(getPosts())
+    dispatch(getDossiers())
 
-  }, [dispatch])
+}, [dispatch])
   
   return (
     <ThemeProvider theme={theme}>

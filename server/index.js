@@ -31,7 +31,7 @@ app.use('/posts', postRoutes)
 app.use('/dossiers', dossiersRoutes)
 app.use('/facturations', facturationsRoutes)
 app.use('/paiements', paiementsRoutes)
-app.use('/employers', employersRoutes)
+app.use('/employés', employersRoutes)
 
 // Connect to database
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })

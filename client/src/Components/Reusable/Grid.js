@@ -62,6 +62,7 @@ export default function Grid({col, data}) {
       data['id'] = index += 1
     })
 
+
     return (
         !data.length ? <h1>Empty</h1> : (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
