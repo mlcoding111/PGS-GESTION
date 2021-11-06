@@ -1,0 +1,1 @@
+export const sectionsName = ["dossiers", "paiements", "employés", "facturations"]

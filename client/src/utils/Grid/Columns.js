@@ -53,7 +53,7 @@ export class Columns{
             { field: 'nom_client', headerName: 'Nom', width: 130 },
             { field: 'type_travaux', headerName: 'Type de travaux', width: 160 },
             { field: 'accepter_date', headerName: 'Accepter date', width: 170 },
-            { field: 'montant_travaux', headerName: 'Montant travaux', width: 160 },
+            { field: 'montant', headerName: 'Montant travaux', width: 160 },
             { field: 'numero_facture', headerName: '# Facture', width: 130 },
             { field: 'date_ajout', headerName: 'Date ajouté', width: 170 },
         ];

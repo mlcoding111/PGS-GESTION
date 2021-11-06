@@ -44,7 +44,7 @@ export class FormFields{
             type_travaux: "",
             date_accepter: new Date(),
             date_ajouter: new Date(),
-            montant: "",
+            montant: 0,
             numero_facture: "",
         }
 

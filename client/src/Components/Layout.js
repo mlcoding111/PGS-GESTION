@@ -10,7 +10,13 @@ import { ListItemIcon } from '@mui/material';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Folder, Group, Receipt, CreditCard, Help, Update, AccountBox, AccountCircle, DeveloperModeSharp} from '@mui/icons-material';
 
+
+// Redux import
+import { useDispatch } from "react-redux";
+
 import PageHeader from './Reusable/PageHeader';
+import Dispatch from '../utils/Functions/Dispatch/Dispatch.js'
+
 const drawerWidth = 240
 
 const useStyle = makeStyles((theme) =>({
@@ -94,10 +100,19 @@ const lowerMenuItems = [
     },
 ]
 
+
 export default function Layout({children}) {
+    const dispatch = useDispatch()
     const classes = useStyle()
     const location = useLocation()
     const history = useHistory()
+    let pathname
+    
+    React.useEffect(()=>{
+        pathname = history.location.pathname.slice(1)
+        dispatch(Dispatch.handleGetDispatch(pathname))
+    }, [history.location.pathname])
+
 
     return (
         <div className={classes.root}> 
