@@ -32,6 +32,9 @@ import AddDossier from "./Components/pages/Dossiers/Add/AddDossiersPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const theme = createTheme(
   frFR,
   Fr
@@ -42,6 +45,7 @@ const App = () => {
   
   return (
     <ThemeProvider theme={theme}>
+    <ToastContainer autoClose={2000} toastStyle={{ backgroundColor: "#121212", color: "#ffffff" }}/>
       <Router>
         <Layout>
           <Switch>
