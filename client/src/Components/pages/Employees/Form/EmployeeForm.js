@@ -85,8 +85,8 @@ export default function EmployeeForm() {
         </Grid>
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" />
-            <Controls.Button text="Reset" color="error" type="Submit" />
+            <Controls.Button text="Submit" type="Submit" name="addBtn" dispatchType={"add"} sender={"Employés"}/>
+            <Controls.Button text="Reset" color="error" type="Submit" dispatchType={"reset"} values={values} setValues={setValues} initialFValues={initialFValues}/>
           </div>
         </Grid>
       </Grid>

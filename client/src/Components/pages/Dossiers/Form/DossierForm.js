@@ -81,7 +81,7 @@ export default function DossierForm() {
 
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" onClick={handleSubmit}/>
+            <Controls.Button text="Submit" type="Submit" onClick={handleSubmit} values={values}/>
             <Controls.Button text="Reset" color="error" type="Submit" />
           </div>
         </Grid>

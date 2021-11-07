@@ -1,2 +1,2 @@
 > Implementer redux avec tous les sections
-> Ajouter un auto-increment pour le backend (id pour dataGrid de MUI)
+> Working on button displayType (SubmitBtn)

@@ -10,7 +10,8 @@ import { getPaiements } from './actions/paiements'
 import { getFacturations } from './actions/facturations'
 import { getEmployers } from './actions/employers'
 
-
+import { DataGrid, frFR } from '@mui/x-data-grid';
+import { frFR as Fr} from '@mui/material/locale';
 
 // Routes
 import Home from "./Components/Home";
@@ -31,7 +32,10 @@ import AddDossier from "./Components/pages/Dossiers/Add/AddDossiersPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createTheme();
+const theme = createTheme(
+  frFR,
+  Fr
+);
 
 const App = () => {
 

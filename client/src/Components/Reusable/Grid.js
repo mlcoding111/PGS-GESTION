@@ -2,7 +2,11 @@
 // It will receive as a props the data for the Rows and Columns for the specific page
 
 import React, { useState, useEffect } from 'react'
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid} from "@mui/x-data-grid";
+
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import AddBtn from './Buttons/AddBtn';
 import DeleteBtn from './Buttons/DeleteBtn';
@@ -62,9 +66,12 @@ export default function Grid({col, data}) {
       data['id'] = index += 1
     })
 
-
     return (
-        !data.length ? <h1>Empty</h1> : (<div style={{ height: 640, width: "100%" }}>
+        !data.length ? 
+        <Box sx={{ width: '100%' }}>
+          <LinearProgress />
+        </Box> : 
+        (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
               rows={data} // Need to be data
               columns={col}

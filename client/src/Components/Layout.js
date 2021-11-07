@@ -100,7 +100,6 @@ const lowerMenuItems = [
     },
 ]
 
-
 export default function Layout({children}) {
     const dispatch = useDispatch()
     const classes = useStyle()
@@ -110,7 +109,7 @@ export default function Layout({children}) {
     
     React.useEffect(()=>{
         pathname = history.location.pathname.slice(1)
-        dispatch(Dispatch.handleGetDispatch(pathname))
+        dispatch(Dispatch.handleGetDispatch(pathname)) // We dispatch the fetch data depending on the route
     }, [history.location.pathname])
 
 

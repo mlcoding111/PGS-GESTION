@@ -13,9 +13,39 @@ const useStyles = makeStyles(theme=>({
 
 }))
 
-export default function Button(props) {
 
-    const {text, size, color, variant, onClick, ...other} = props
+export default function Button(props) {
+    const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, ...other} = props
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if(type == "Submit"){
+            switch(dispatchType){
+                case "add":
+                    console.log('add')
+                    break
+                case "delete":
+                    console.log('delete')
+                    break
+                case "update":
+                    console.log("update")
+                    break
+                case "reset":
+                    setValues(initialFValues)
+                    break
+                default:
+                    console.log('unknow button')
+            }
+        }else{
+            console.log("not a submit btn..")
+        }
+        
+    
+        // console.log(values)
+    }
+
+
 
     const classes = useStyles()
 
@@ -25,7 +55,8 @@ export default function Button(props) {
             size={size || "large"}
             color={color || "primary"}
             text={text}
-            onClick={onClick}
+            onClick={!type ? "Submit": console.log("not a submit button")}
+            onSubmit={handleSubmit}
             {...other} // Can take other props such as "Type" and etc..
             classes={{root: classes.root, label: classes.label}}
             > 
