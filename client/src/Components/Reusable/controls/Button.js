@@ -1,6 +1,11 @@
 import { Button as MuiButton} from '@mui/material'
 import { makeStyles } from '@mui/styles'
+import { useLocation } from 'react-router'
 import React from 'react'
+import Dispatch from '../../../utils/Functions/Dispatch/Dispatch.js'
+
+// Redux import
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles(theme=>({
     root:{
@@ -16,6 +21,10 @@ const useStyles = makeStyles(theme=>({
 
 export default function Button(props) {
     const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, ...other} = props
+    const dispatch = useDispatch()
+    const location = useLocation()
+    let { pathname } = location
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,6 +32,7 @@ export default function Button(props) {
         if(type == "Submit"){
             switch(dispatchType){
                 case "add":
+                    dispatch(Dispatch.handleCreateDispatch(pathname, values))
                     console.log('add')
                     break
                 case "delete":
@@ -45,6 +55,10 @@ export default function Button(props) {
         // console.log(values)
     }
 
+    const handleClick = (e) => {
+        console.log("not submit btn")
+    }
+
 
 
     const classes = useStyles()
@@ -55,8 +69,7 @@ export default function Button(props) {
             size={size || "large"}
             color={color || "primary"}
             text={text}
-            onClick={!type ? "Submit": console.log("not a submit button")}
-            onSubmit={handleSubmit}
+            onClick={!type == "Submit" ? handleClick : handleSubmit}
             {...other} // Can take other props such as "Type" and etc..
             classes={{root: classes.root, label: classes.label}}
             > 

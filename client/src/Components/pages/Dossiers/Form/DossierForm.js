@@ -25,7 +25,7 @@ export default function DossierForm() {
   }
 
   return (
-    <Form name="dossierForm">
+    <Form name="dossierForm" values={values}>
       <Grid container className={classes.grid}>
         <Grid item xs={6}>
           <Controls.Input

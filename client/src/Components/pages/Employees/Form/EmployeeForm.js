@@ -13,7 +13,7 @@ export default function EmployeeForm() {
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
   return (
-    <Form name="employeeForm">
+    <Form name="employeeForm" values={values}>
       <Grid container className={classes.grid}>
         <Grid item xs={6}>
           <Controls.Input
@@ -85,7 +85,7 @@ export default function EmployeeForm() {
         </Grid>
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" name="addBtn" dispatchType={"add"} sender={"Employés"}/>
+            <Controls.Button text="Submit" type="Submit" name="addBtn" dispatchType={"add"} sender={"Employés"} values={values}/>
             <Controls.Button text="Reset" color="error" type="Submit" dispatchType={"reset"} values={values} setValues={setValues} initialFValues={initialFValues}/>
           </div>
         </Grid>
