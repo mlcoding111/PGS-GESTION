@@ -5,7 +5,6 @@ import Controls from "../../../Reusable/controls/Controls";
 import { FormStyle } from "../../../Reusable/Styles/FormStyle";
 import { Dossier } from "../../../../utils/Sections/Dossier";
 
-import {useDispatch} from 'react-redux'
 import { createPost } from "../../../../actions/posts";
 
 
@@ -14,15 +13,6 @@ const { initialFValues, clientType } = Dossier.FormFields;
 export default function DossierForm() {
   const classes = FormStyle();
   const { values, setValues, handleInputChange } = useForm(initialFValues);
-
-  const dispatch = useDispatch()
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Submit")
-
-    dispatch(createPost(values))
-  }
 
   return (
     <Form name="dossierForm" values={values}>
@@ -81,7 +71,7 @@ export default function DossierForm() {
 
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" onClick={handleSubmit} values={values}/>
+            <Controls.Button text="Submit" type="Submit"  dispatchType={"add"} values={values}/>
             <Controls.Button text="Reset" color="error" type="Submit" />
           </div>
         </Grid>

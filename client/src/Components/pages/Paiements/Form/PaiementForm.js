@@ -11,12 +11,6 @@ export default function PaiementForm() {
   const classes = FormStyle();
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
-  // fournisseur: "",
-  // montant: "",
-  // date: new Date(),
-  // faitPar: "",
-  // accepterPar: "",
-  // numeroFacture: ""
   return (
     <Form name="paiementForm">
       <Grid container className={classes.grid}>
@@ -65,7 +59,7 @@ export default function PaiementForm() {
 
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" />
+            <Controls.Button text="Submit" type="Submit"  dispatchType={"add"} values={values}/>
             <Controls.Button text="Reset" color="error" type="Submit" />
           </div>
         </Grid>

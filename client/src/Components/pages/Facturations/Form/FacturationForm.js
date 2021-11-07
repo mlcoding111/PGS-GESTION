@@ -85,7 +85,7 @@ export default function FacturationForm() {
 
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit" />
+            <Controls.Button text="Submit" type="Submit"  dispatchType={"add"} values={values}/>
             <Controls.Button text="Reset" color="error" type="Submit" />
           </div>
         </Grid>

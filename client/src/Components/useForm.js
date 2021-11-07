@@ -33,11 +33,6 @@ export function useForm(initialFValues) {
 }
 
 export function Form(props) {
-    // const {values}= props
-    // const handleClick = (e) => {
-    //     e.preventDefault()
-    //     console.log(values)
-    // }
 
     const classes = useStyles()
     return (
