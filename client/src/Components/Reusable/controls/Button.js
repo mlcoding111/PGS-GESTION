@@ -3,6 +3,8 @@ import { makeStyles } from '@mui/styles'
 import { useLocation } from 'react-router'
 import React from 'react'
 import Dispatch from '../../../utils/Functions/Dispatch/Dispatch.js'
+import { useHistory } from 'react-router';
+import returnCurrentSection from '../../../utils/UtilityFunctions'
 
 // Redux import
 import { useDispatch } from "react-redux";
@@ -20,11 +22,11 @@ const useStyles = makeStyles(theme=>({
 
 
 export default function Button(props) {
+    const history = useHistory()
     const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, ...other} = props
     const dispatch = useDispatch()
     const location = useLocation()
     let { pathname } = location
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -34,6 +36,7 @@ export default function Button(props) {
                 case "add":
                     dispatch(Dispatch.handleCreateDispatch(pathname, values))
                     console.log('add')
+                    history.push(`/${returnCurrentSection(pathname)}`)
                     break
                 case "delete":
                     console.log('delete')
