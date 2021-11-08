@@ -6,11 +6,11 @@ export class FormFields{
             prenom: '',
             nom: '',
             courriel: '',
-            date_embauche: new Date(),
-            date_naissance: new Date(),
-            reference_nom: '',
-            reference_telephone: '',
-            type_employer: 'a1',
+            dateEmbauche: new Date(),
+            dateNaissance: new Date(),
+            referenceNom: '',
+            referenceTtelephone: '',
+            typeEemployer: 'a1',
             telephone: '',
             departementId: '',
             actif: false
@@ -39,13 +39,13 @@ export class FormFields{
 
     static get Dossiers(){
         const initialFValues = {
-            nom_client: "",
-            numero_client: "",
-            type_travaux: "",
-            date_accepter: new Date(),
-            date_ajouter: new Date(),
+            nomClient: "",
+            numeroClient: "",
+            typeTravaux: "",
+            dateAccepter: new Date(),
+            dateAjouter: new Date(),
             montant: 0,
-            numero_facture: "",
+            numeroFacture: "",
         }
 
         const clientType = [

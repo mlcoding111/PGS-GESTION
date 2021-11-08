@@ -1,4 +1,4 @@
-import success from '../fx/success.mp3'
+import success from '../fx/success2.mp3'
 import ReactHowler from 'react-howler'
 import {Howl, Howler} from 'howler';
 // https://github.com/goldfire/howler.js#global-methods
