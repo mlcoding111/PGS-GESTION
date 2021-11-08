@@ -9,8 +9,8 @@ export class FormFields{
             dateEmbauche: new Date(),
             dateNaissance: new Date(),
             referenceNom: '',
-            referenceTtelephone: '',
-            typeEemployer: 'a1',
+            referenceTelephone: '',
+            typeEmployer: 'a1',
             telephone: '',
             departementId: '',
             actif: false

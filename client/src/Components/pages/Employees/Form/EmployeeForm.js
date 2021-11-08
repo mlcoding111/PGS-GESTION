@@ -30,21 +30,21 @@ export default function EmployeeForm() {
             onChange={handleInputChange}
           />
           <Controls.Input
-            name="reference_nom"
+            name="referenceNom"
             label="Nom complet de la référence"
-            value={values.reference_nom}
+            value={values.referenceNom}
             onChange={handleInputChange}
           />
           <Controls.DatePicker
-            name="date_naissance"
+            name="dateNaissance"
             label="Date de naissance"
-            value={values.date_naissance}
+            value={values.dateNaissance}
             onChange={handleInputChange}
           />
           <Controls.Select
-            name="type_employer"
+            name="typeEmployer"
             label="Type d'employer"
-            value={values.type_employer}
+            value={values.typeEmployer}
             onChange={handleInputChange}
             options={employeeTypes}
           />
@@ -64,15 +64,15 @@ export default function EmployeeForm() {
           />
 
           <Controls.Input
-            name="telephone"
+            name="referenceTelephone"
             label="Numéro de la référence"
-            value={values.telephone}
+            value={values.referenceTelephone}
             onChange={handleInputChange}
           />
           <Controls.DatePicker
-            name="date_embauche"
+            name="dateEmbauche"
             label="Date d'embauche"
-            value={values.date_embauche}
+            value={values.dateEmbauche}
             onChange={handleInputChange}
           />
 
