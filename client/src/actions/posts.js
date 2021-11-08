@@ -1,6 +1,7 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../utils/constants/actionTypes';
 import * as api from '../api'
-
+import playAudio from '../utils/Audio'
+import { toast } from "react-toastify";
 // Action Creators ( function that returns action )
 
 export const getPosts = () => async (dispatch) => { // => async (dispatch) because we are dealing with async logic
@@ -16,7 +17,10 @@ export const getPosts = () => async (dispatch) => { // => async (dispatch) becau
 export const createPost = (post) => async (dispatch) => {
     try {
         const { data } = await api.createPost(post) // make api request to the server
-
+        
+        toast.success(`Post ajouté : ${data.title} `);        
+        playAudio()
+        
         dispatch({ type: CREATE, payload: data })
     } catch (error) {
         console.log(error)
