@@ -39,7 +39,7 @@ export default function DossierForm() {
             onChange={handleInputChange}
           />
           <Controls.Select
-            name="type_travaux"
+            name="typeTravaux"
             label="Type de travaux"
             value={values.typeTravaux}
             onChange={handleInputChange}
@@ -49,20 +49,20 @@ export default function DossierForm() {
 
         <Grid item xs={6}>
           <Controls.Input
-            name="numero_client"
+            name="numeroClient"
             label="Numéro du client"
             value={values.numeroClient}
             onChange={handleInputChange}
           />
           <Controls.DatePicker
-            name="date_ajouter"
+            name="dateAjouter"
             label="Date ajouter"
             value={values.dateAjouter}
             onChange={handleInputChange}
           />
 
           <Controls.Input
-            name="numero_facture"
+            name="numeroFacture"
             label="Numéro de la facture"
             value={values.numeroFacture}
             onChange={handleInputChange}
