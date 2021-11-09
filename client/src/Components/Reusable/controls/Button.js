@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme=>({
 
 }))
 
-
 export default function Button(props) {
     const history = useHistory()
     const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, ...other} = props

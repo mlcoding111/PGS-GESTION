@@ -2,20 +2,20 @@ import mongoose from 'mongoose'
 
 const dossier = mongoose.Schema({
     id: Number,
-    nom_client: String,
-    numero_client: String,
+    nomClient: String,
+    numeroClient: String,
     courriel: String,
-    type_travaux: String,
-    date_accepter:{
+    typeTravaux: String,
+    dateAccepter:{
         type: Date,
         default: new Date()
     },
-    date_ajouter:{
+    dateAjouter:{
         type: Date,
         default: new Date()
     },
     montant: Number,
-    numero_facture: String,
+    numeroFacture: String,
     creationInfo:{
         date: {
             type: Date,

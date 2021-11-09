@@ -7,7 +7,6 @@ import { Dossier } from "../../../../utils/Sections/Dossier";
 
 import { createPost } from "../../../../actions/posts";
 
-
 const { initialFValues, clientType } = Dossier.FormFields;
 
 export default function DossierForm() {

@@ -58,8 +58,7 @@ const rows = [
     { id: 10, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function Grid({col, data}) {
-
+export default function Grid({col, data, currentId, setCurrentId}) {
   const [selectedItems, setSelectedItems] = useState([]);
     
     data && data.map((data, index)=>{ // If data is not empty, assign id for each data
@@ -82,7 +81,7 @@ export default function Grid({col, data}) {
               disableSelectionOnClick
               onSelectionModelChange={(newSelection) => {
                 setSelectedItems(newSelection);
-                console.log(newSelection)
+                console.log(newSelection) // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
               }}/>
             <AddBtn />
             <DeleteBtn selectedItems={selectedItems}/> {/* We pass all the selected items */}

@@ -4,7 +4,7 @@ const empoloyer = mongoose.Schema({
     prenom: String,
     nom: String,
     courriel: String,
-    date_embauche:{
+    dateEmbauche:{
         type: Date,
         default: new Date()
     },
@@ -12,11 +12,10 @@ const empoloyer = mongoose.Schema({
         type: Date,
         default: new Date()
     },
-    reference_nom: String,
-    reference_telephone: String,
-    type_employer: String,
+    referenceNom: String,
+    referenceTelephone: String,
+    typeEmployer: String,
     telephone: String,
-    type_employer: String,
     actif: Boolean,
     creationInfo:{
         date: {
