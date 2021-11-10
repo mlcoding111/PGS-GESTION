@@ -1,12 +1,15 @@
 // This grid component will be used to showcase the data for each pages. 
 // It will receive as a props the data for the Rows and Columns for the specific page
 
+// Filter selectedItem to add object to array 
+
 import React, { useState, useEffect } from 'react'
 import { DataGrid} from "@mui/x-data-grid";
 
-import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+
+import Controls from './controls/Controls';
 
 import AddBtn from './Buttons/AddBtn';
 import DeleteBtn from './Buttons/DeleteBtn';
@@ -60,10 +63,16 @@ const rows = [
 
 export default function Grid({col, data, currentId, setCurrentId}) {
   const [selectedItems, setSelectedItems] = useState([]);
-    
+  const [selectedRows, setSelectedRows] = React.useState([]);
+
     data && data.map((data, index)=>{ // If data is not empty, assign id for each data
       data['id'] = index += 1
     })
+
+    // console.log(col.push( { field: '', headerName: '', width: 100, renderCell: () =>{
+    //   return <button>Salut</button>
+    // }}))
+   
 
     return (
         !data.length ? 
@@ -79,12 +88,24 @@ export default function Grid({col, data, currentId, setCurrentId}) {
               rowsPerPageOptions={[10]}
               checkboxSelection
               disableSelectionOnClick
-              onSelectionModelChange={(newSelection) => {
-                setSelectedItems(newSelection);
-                console.log(newSelection) // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
-              }}/>
+              onRowClick={(row)=> console.log(row.row)}
+              onSelectionModelChange={(ids) => {
+                const selectedIDs = new Set(ids);
+                const selectedRows = data.filter((row) =>
+                  selectedIDs.has(row.id),
+                );      
+                setSelectedRows(selectedRows);
+                console.log(selectedRows)
+              }}
+              
+              />
+
+{/* <pre style={{ fontSize: 10 }}>
+        {JSON.stringify(selectedRows, null, 4)}
+      </pre> */}
+
             <AddBtn />
-            <DeleteBtn selectedItems={selectedItems}/> {/* We pass all the selected items */}
+            <DeleteBtn selectedRows={selectedRows}/> {/* We pass all the selected items */}
       </div>
     ))
 }

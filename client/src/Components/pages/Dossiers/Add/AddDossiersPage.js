@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function AddDossier() {
     const classes = useStyles()
-
     return (
         <>
             <Paper className={classes.pageContent} sx={{ p: 2, m : 5 }}>

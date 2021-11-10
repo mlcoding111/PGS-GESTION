@@ -8,12 +8,12 @@ export class Columns{
             { field: 'prenom', headerName: 'Prénom', width: 130 },
             { field: 'nom', headerName: 'Nom', width: 130 },
             { field: 'courriel', headerName: 'Courriel', width: 130 },
-            { field: 'dateEmbauche', headerName: 'Date embauche', width: 200 },
+            { field: 'dateEmbauche', headerName: 'Date embauche', width: 200, editable: true },
             { field: 'dateNaissance', headerName: 'Date de naissance', width: 200 },
             { field: 'referenceNom', headerName: 'Nom reference', width: 200 },
             { field: 'referenceTelephone', headerName: '# Reference', width: 130 },
             { field: 'typeEmployer', headerName: 'Type', width: 70 },
-            { field: 'actif', headerName: 'Actif', width: 70 }
+            { field: 'actif', headerName: 'Actif', width: 70}
         ];
         return columns
     }

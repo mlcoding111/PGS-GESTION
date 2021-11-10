@@ -1,2 +1,3 @@
 > Implementer redux avec tous les sections
-> Working on button displayType (SubmitBtn)
+> Add :  { editable: true } to the end of each Columns then call update dispatch
+> If data has a note , add a note icon to open it and see the note

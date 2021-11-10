@@ -29,33 +29,27 @@ export default function Button(props) {
     const location = useLocation()
     let { pathname } = location
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-            switch(dispatchType){
-                case "add":
-                    dispatch(Dispatch.handleCreateDispatch(pathname, values))
-                    console.log('add')
-                    history.push(`/${returnCurrentSection(pathname)}`)
-                    break
-                case "delete":
-                    console.log('delete')
-                    break
-                case "update":
-                    console.log("update")
-                    break
-                case "reset":
-                    setValues(initialFValues)
-                    break
-                default:
-                    console.log('unknow button')
-            }
-    }       
-    
         // console.log(values)
 
     const handleClick = (e) => {
-        if(dispatchType == "edit"){
-
+        e.preventDefault()
+        switch(dispatchType){
+            case "add":
+                dispatch(Dispatch.handleCreateDispatch(pathname, values))
+                console.log('add')
+                history.push(`/${returnCurrentSection(pathname)}`)
+                break
+            case "delete":
+                console.log('delete')
+                break
+            case "update":
+                console.log("update")
+                break
+            case "reset":
+                setValues(initialFValues)
+                break
+            default:
+                console.log('unknow button')
         }
     }
 
@@ -69,7 +63,7 @@ export default function Button(props) {
             size={size || "larg e"}
             color={color || "primary"}
             text={text}
-            onClick={!type == "Submit" ? handleClick : handleSubmit}
+            onClick={handleClick}
             {...other} // Can take other props such as "Type" and etc..
             classes={{root: classes.root, label: classes.label}}
             > 
