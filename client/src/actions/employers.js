@@ -32,6 +32,9 @@ export const updateEmployer = (id, employer) => async (dispatch)=>{
     try {
         const { data } = await api.updateEmployer(id, employer)
 
+        toast.success(`L'employer ${data.prenom} ${data.nom} a été modifié avec succes !`);  // Will have to correct the grammar with proper keybaord language     
+        playAudio()
+        
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {
         console.log(error.message)

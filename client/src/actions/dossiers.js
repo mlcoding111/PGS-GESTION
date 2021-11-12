@@ -19,7 +19,7 @@ export const createDossier = (dossier) => async (dispatch) => {
     try {
         const { data } = await api.createDossier(dossier) // make api request to the server
 
-        toast.success(`Dossier ajouté : ${data.nom_client}`);        
+        toast.success(`Dossier ajouté : ${data.nomClient}`);        
         playAudio()
         
         dispatch({ type: CREATE, payload: data })

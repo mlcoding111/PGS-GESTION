@@ -31,6 +31,9 @@ export const updatePaiement = (id, paiement) => async (dispatch)=>{
     try {
         const { data } = await api.updatePaiement(id, paiement)
 
+        toast.success(`Le paiement :  ${data.numeroFacture} a été modifié avec succes ! `);  // Will have to correct the grammar with proper keybaord language     
+        playAudio()
+
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {
         console.log(error.message)
