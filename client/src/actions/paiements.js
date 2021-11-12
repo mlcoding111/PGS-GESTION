@@ -27,9 +27,9 @@ export const createPaiement = (paiement) => async (dispatch) => {
     }
 } 
 
-export const updatePaiement = (id, dossier) => async (dispatch)=>{
+export const updatePaiement = (id, paiement) => async (dispatch)=>{
     try {
-        const { data } = await api.updatePaiement(id, dossier)
+        const { data } = await api.updatePaiement(id, paiement)
 
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {

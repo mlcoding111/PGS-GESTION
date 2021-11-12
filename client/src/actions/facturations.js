@@ -27,9 +27,9 @@ export const createFacturation = (facturation) => async (dispatch) => {
     }
 } 
 
-export const updateFacturation = (id, dossier) => async (dispatch)=>{
+export const updateFacturation = (id, facturation) => async (dispatch)=>{
     try {
-        const { data } = await api.updatePaiement(id, dossier)
+        const { data } = await api.updateFacturation(id, facturation)
 
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {

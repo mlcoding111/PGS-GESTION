@@ -28,9 +28,9 @@ export const createEmployer = (employer) => async (dispatch) => {
     }
 } 
 
-export const updateEmployer = (id, dossier) => async (dispatch)=>{
+export const updateEmployer = (id, employer) => async (dispatch)=>{
     try {
-        const { data } = await api.updateEmployer(id, dossier)
+        const { data } = await api.updateEmployer(id, employer)
 
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {
