@@ -10,10 +10,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function AddBtn({selectedItems}) {
+export default function AddBtn({selectedRows}) {
+
     const deleteItems = () => {
         // Logic to delete the selected items 
-        console.log(`Rows : ${selectedItems} will be deleted.`)
+        selectedRows.map(item=> console.log(`${item._id} will be deleted`))
     }
 
     const classes = useStyles();

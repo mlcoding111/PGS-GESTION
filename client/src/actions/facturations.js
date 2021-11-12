@@ -26,3 +26,13 @@ export const createFacturation = (facturation) => async (dispatch) => {
         console.log(error)
     }
 } 
+
+export const updateFacturation = (id, dossier) => async (dispatch)=>{
+    try {
+        const { data } = await api.updatePaiement(id, dossier)
+
+        dispatch({ type: UPDATE, payload: data})
+    } catch (error) {
+        console.log(error.message)
+    }
+}

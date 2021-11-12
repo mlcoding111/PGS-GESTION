@@ -26,3 +26,13 @@ export const createPaiement = (paiement) => async (dispatch) => {
         console.log(error)
     }
 } 
+
+export const updatePaiement = (id, dossier) => async (dispatch)=>{
+    try {
+        const { data } = await api.updatePaiement(id, dossier)
+
+        dispatch({ type: UPDATE, payload: data})
+    } catch (error) {
+        console.log(error.message)
+    }
+}

@@ -5,7 +5,6 @@ export const getDossiers = async (req, res) => {
     try{
         const dossiers = await Dossier.find() // Get all post from database
         res.status(200).json(dossiers) // return all posts
-        console.log(dossiers)
     } catch (error) {
         res.status(404).json({message: error.message})
     }
@@ -28,10 +27,8 @@ export const createDossier = async (req, res) =>{
 export const updateDossier = async (req, res) => {
     const { id: _id } = req.params
     const dossier = req.body
-
-    if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")
-
-    const updatedDossier = await Dossier.findByIdAndUpdate(_id, dossier, { new: true })
+    // if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")  
+    const updatedDossier = await Dossier.findByIdAndUpdate(_id,  { ...dossier, _id}, { new: true })
 
     res.json(updatedDossier)
 }

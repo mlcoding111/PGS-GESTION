@@ -27,3 +27,12 @@ export const createDossier = (dossier) => async (dispatch) => {
         console.log(error)
     }
 } 
+
+export const updateDossier = (id, dossier) => async (dispatch)=>{
+    try {
+        const { data } = await api.updateDossier(id, dossier)
+        dispatch({ type: UPDATE, payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}

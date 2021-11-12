@@ -4,15 +4,26 @@ import { useForm, Form } from "../../../useForm";
 import Controls from "../../../Reusable/controls/Controls";
 import { FormStyle } from "../../../Reusable/Styles/FormStyle";
 import { Dossier } from "../../../../utils/Sections/Dossier";
-
-import { createPost } from "../../../../actions/posts";
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const { initialFValues, clientType } = Dossier.FormFields;
 
 export default function DossierForm() {
-  const classes = FormStyle();
   const { values, setValues, handleInputChange } = useForm(initialFValues);
+  const location = useLocation();
+  const classes = FormStyle();  
 
+  const dossier = useSelector((state)=> location.state ? state.dossiers.find((dossier)=> dossier._id === location.state.id): null)  
+   // Check if we passed an id trough location.state ( which mean the user want to update this dossier )
+
+  React.useEffect(()=> {
+    if(dossier){
+      console.log('Dossier found.. ', dossier)
+      setValues(dossier)
+    }
+  }, [dossier])
+  
   return (
     <Form name="dossierForm" values={values}>
       <Grid container className={classes.grid}>
@@ -70,7 +81,7 @@ export default function DossierForm() {
 
         <Grid item xs={12} className={classes.submit}>
           <div>
-            <Controls.Button text="Submit" type="Submit"  dispatchType={"add"} values={values}/>
+            <Controls.Button text="Soumettre" type="Submit"  dispatchType={location.state ? "update": "add"} values={values} id={location.state ? location.state.id : null}/>
             <Controls.Button text="Reset" color="error" type="Submit" />
           </div>
         </Grid>

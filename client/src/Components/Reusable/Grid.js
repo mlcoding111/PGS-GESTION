@@ -5,14 +5,11 @@
 
 import React, { useState, useEffect } from 'react'
 import { DataGrid} from "@mui/x-data-grid";
-
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-
-import Controls from './controls/Controls';
-
 import AddBtn from './Buttons/AddBtn';
 import DeleteBtn from './Buttons/DeleteBtn';
+import EditBtn from './Buttons/EditBtn'
 
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
@@ -64,6 +61,7 @@ const rows = [
 export default function Grid({col, data, currentId, setCurrentId}) {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectedRows, setSelectedRows] = React.useState([]);
+  const [editBtnDisabled, setEditBtnDisabled] = useState(true)
 
     data && data.map((data, index)=>{ // If data is not empty, assign id for each data
       data['id'] = index += 1
@@ -71,14 +69,13 @@ export default function Grid({col, data, currentId, setCurrentId}) {
 
     // console.log(col.push( { field: '', headerName: '', width: 100, renderCell: () =>{
     //   return <button>Salut</button>
-    // }}))
-   
+    // }}))   
 
     return (
         !data.length ? 
         <Box sx={{ width: '100%' }}>
           <LinearProgress />
-          <AddBtn />
+          <AddBtn /> //
         </Box> : 
         (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
@@ -88,13 +85,15 @@ export default function Grid({col, data, currentId, setCurrentId}) {
               rowsPerPageOptions={[10]}
               checkboxSelection
               disableSelectionOnClick
-              onRowClick={(row)=> console.log(row.row)}
-              onSelectionModelChange={(ids) => {
+              onRowClick={(row)=> console.log(row.row)} // Need to get this to change the state as well
+              // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
+              onSelectionModelChange={(ids) => {              
                 const selectedIDs = new Set(ids);
                 const selectedRows = data.filter((row) =>
                   selectedIDs.has(row.id),
                 );      
                 setSelectedRows(selectedRows);
+                (ids.length == 1 ? setEditBtnDisabled(false) : setEditBtnDisabled(true))
                 console.log(selectedRows)
               }}
               
@@ -103,8 +102,9 @@ export default function Grid({col, data, currentId, setCurrentId}) {
 {/* <pre style={{ fontSize: 10 }}>
         {JSON.stringify(selectedRows, null, 4)}
       </pre> */}
-
+            <button onClick={()=> console.log(selectedRows[0]._id)}> Click</button>
             <AddBtn />
+            <EditBtn disabled={editBtnDisabled} selectedItem={selectedRows.length && selectedRows[0]._id}/>
             <DeleteBtn selectedRows={selectedRows}/> {/* We pass all the selected items */}
       </div>
     ))

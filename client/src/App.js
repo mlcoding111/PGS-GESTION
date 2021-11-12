@@ -28,6 +28,7 @@ import AddPaiementPage from "./Components/pages/Paiements/Add/AddPaiementPage";
 
 import Dossiers from "./Components/pages/Dossiers/DossiersGrid";
 import AddDossier from "./Components/pages/Dossiers/Add/AddDossiersPage";
+import DossierForm from "./Components/pages/Dossiers/Form/DossierForm";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -66,6 +67,9 @@ const App = () => {
             </Route>
             <Route exact path="/dossiers/ajout">
               <AddDossier />
+            </Route>
+            <Route exact path="/dossiers/:id">
+              <DossierForm />
             </Route>
             <Route exact path="/paiements">
               <Paiements/>

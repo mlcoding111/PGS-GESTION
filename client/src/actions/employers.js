@@ -27,3 +27,13 @@ export const createEmployer = (employer) => async (dispatch) => {
         console.log(error)
     }
 } 
+
+export const updateEmployer = (id, dossier) => async (dispatch)=>{
+    try {
+        const { data } = await api.updateEmployer(id, dossier)
+
+        dispatch({ type: UPDATE, payload: data})
+    } catch (error) {
+        console.log(error.message)
+    }
+}

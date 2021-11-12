@@ -23,53 +23,48 @@ const useStyles = makeStyles(theme=>({
 
 export default function Button(props) {
     const history = useHistory()
-    const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, ...other} = props
+    const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, id, ...other} = props
 
     const dispatch = useDispatch()
     const location = useLocation()
     let { pathname } = location
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-            switch(dispatchType){
-                case "add":
-                    dispatch(Dispatch.handleCreateDispatch(pathname, values))
-                    console.log('add')
-                    history.push(`/${returnCurrentSection(pathname)}`)
-                    break
-                case "delete":
-                    console.log('delete')
-                    break
-                case "update":
-                    console.log("update")
-                    break
-                case "reset":
-                    setValues(initialFValues)
-                    break
-                default:
-                    console.log('unknow button')
-            }
-    }       
-    
+    console.log({dispatchType})
+
         // console.log(values)
 
     const handleClick = (e) => {
-        if(dispatchType == "edit"){
-
+        e.preventDefault()
+        switch(dispatchType){
+            case "add":
+                dispatch(Dispatch.handleCreateDispatch(pathname, values))
+                console.log('add')
+                break
+            case "delete":
+                console.log('delete')
+                break
+            case "update":
+                dispatch(Dispatch.handleUpdateDispatch(pathname, values, id))
+                console.log("update")
+                break
+            case "reset":
+                setValues(initialFValues)
+                break
+            default:
+                console.log('unknow button')
         }
+        history.push(`/${returnCurrentSection(pathname)}`)
     }
-
-
 
     const classes = useStyles()
 
     return (
         <MuiButton
             variant={variant || "contained"} // We define defaults values but we can still change it if we pass a props
-            size={size || "larg e"}
+            size={size || "large"}
             color={color || "primary"}
             text={text}
-            onClick={!type == "Submit" ? handleClick : handleSubmit}
+            onClick={handleClick}
             {...other} // Can take other props such as "Type" and etc..
             classes={{root: classes.root, label: classes.label}}
             > 
