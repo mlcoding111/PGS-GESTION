@@ -19,7 +19,6 @@ import Dev from './Components/Dev/Dev'
 
 import Employee from "./Components/pages/Employees/EmployeeGrid";
 import EmployeeForm from "./Components/pages/Employees/Form/EmployeeForm";
-import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
 
 import Facturation from "./Components/pages/Facturations/FacturationsGrid";
 import AddFacturationPage from "./Components/pages/Facturations/Add/AddFacturationPage";
@@ -60,28 +59,25 @@ const App = () => {
             <Route exact path="/employés">
               <Employee />
             </Route>
-            <Route exact path="/employés/ajout">
-              <AddEmployee />
+            <Route exact path={["/employés/ajout", "/employés/:id"]}>
+              <EmployeeForm />
             </Route>
             <Route exact path="/dossiers">
               <Dossiers />
             </Route>
-            <Route exact path="/dossiers/ajout">
-              <DossierForm />
-            </Route>
-            <Route exact path="/dossiers/:id">
+            <Route exact path={["/dossiers/ajout", "/dossiers/:id"]}>
               <DossierForm />
             </Route>
             <Route exact path="/paiements">
               <Paiements/>
             </Route>
-            <Route exact path="/paiements/ajout">
+            <Route exact path={["/paiements/ajout", "/paiements/:id"]}>
               <AddPaiementPage />
             </Route>
             <Route exact path="/facturations">
               <Facturation />
             </Route>
-            <Route exact path="/facturations/ajout">
+            <Route exact path={["/facturations/ajout", "/facturations/:id"]}>
               <AddFacturationPage />
             </Route>
           </Switch>
