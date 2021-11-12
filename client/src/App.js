@@ -18,6 +18,7 @@ import Home from "./Components/Home";
 import Dev from './Components/Dev/Dev'
 
 import Employee from "./Components/pages/Employees/EmployeeGrid";
+import EmployeeForm from "./Components/pages/Employees/Form/EmployeeForm";
 import AddEmployee from "./Components/pages/Employees/Add/AddEmployeePage";
 
 import Facturation from "./Components/pages/Facturations/FacturationsGrid";
@@ -66,7 +67,7 @@ const App = () => {
               <Dossiers />
             </Route>
             <Route exact path="/dossiers/ajout">
-              <AddDossier />
+              <DossierForm />
             </Route>
             <Route exact path="/dossiers/:id">
               <DossierForm />

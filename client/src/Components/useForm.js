@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@mui/styles';
+import { Paper } from '@mui/material';
 
 const useStyles = makeStyles(theme =>({
         root: {
@@ -9,6 +10,9 @@ const useStyles = makeStyles(theme =>({
             },
             display: "flex!important",
             justifyContent: "center!important"
+        },
+        pageContent: {
+            marginRight: "auto"
         }
 }))
 
@@ -36,9 +40,11 @@ export function Form(props) {
 
     const classes = useStyles()
     return (
+        <Paper className={classes.pageContent} sx={{ p: 2, m : 5 }}>
         <form className={classes.root} autoComplete="off">
             {props.children}
             {/* <button onClick={handleClick}>ss</button> */}
         </form>
+        </Paper>
     )
 }
