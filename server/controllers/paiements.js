@@ -26,11 +26,11 @@ export const createPaiement = async (req, res) =>{
 
 export const updatePaiement = async (req, res) => {
     const { id: _id } = req.params
-    const dossier = req.body
+    const paiement = req.body
 
-    if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")
+    // if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No Paiement with that id")
 
-    const updatedDossier = await Dossier.findByIdAndUpdate(_id, { ...dossier, _id}, { new: true })
+    const updatedPaiement = await Paiement.findByIdAndUpdate(_id, { ...paiement, _id}, { new: true })
 
-    res.json(updatedDossier)
+    res.json(updatedPaiement)
 }

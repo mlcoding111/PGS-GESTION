@@ -26,11 +26,11 @@ export const createFacturation = async (req, res) =>{
 
 export const updateFacture = async (req, res) => {
     const { id: _id } = req.params
-    const dossier = req.body
+    const facturation = req.body
 
-    if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")
+    // if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No Facturation with that id")
 
-    const updatedDossier = await Dossier.findByIdAndUpdate(_id, { ...dossier, _id}, { new: true })
+    const updatedFacturation = await Facturation.findByIdAndUpdate(_id, { ...facturation, _id}, { new: true })
 
-    res.json(updatedDossier)
+    res.json(updatedFacturation)
 }

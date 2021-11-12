@@ -26,11 +26,11 @@ export const createEmployer = async (req, res) =>{
 
 export const updateEmployer = async (req, res) => {
     const { id: _id } = req.params
-    const dossier = req.body
+    const employer = req.body
 
-    if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")
+    // if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No employer with that id")
 
-    const updatedDossier = await Dossier.findByIdAndUpdate(_id,{ ...dossier, _id}, { new: true })
+    const updatedEmployer = await Employer.findByIdAndUpdate(_id,{ ...employer, _id}, { new: true })
 
-    res.json(updatedDossier)
+    res.json(updatedEmployer)
 }
