@@ -15,13 +15,13 @@ const handleUpdateDispatch = (pathname, values, id) => {
             return updateDossier(id, values)
             break
         case "paiements":
-            return updatePaiement(values)
+            return updatePaiement(id, values)
             break;
         case "employés":
-            return updateEmployer(values)
+            return updateEmployer(id, values)
             break
         case "facturations":
-            return updateFacturation(values)
+            return updateFacturation(id, values)
         default: 
             console.log('error')
     }
