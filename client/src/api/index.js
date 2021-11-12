@@ -15,14 +15,14 @@ export const updateDossier = (id, updatedDossier) => axios.patch(`${url}dossiers
 // Facturations
 export const fetchFacturations = () => axios.get(`${url}facturations`)
 export const createFacturation = (newFacturation) => axios.post(`${url}facturations`, newFacturation)
-export const updateFacturation = (id, updatedDossier) => axios.patch(`${url}/dossier/${id}`, updatedDossier)
+export const updateFacturation = (id, updatedFacturation) => axios.patch(`${url}/dossier/${id}`, updatedFacturation)
 
 // Paiements
 export const fetchPaiements = () => axios.get(`${url}paiements`)
 export const createPaiement = (newPaiement) => axios.post(`${url}paiements`, newPaiement)
-export const updatePaiement = (id, updatedDossier) => axios.patch(`${url}/dossier/${id}`, updatedDossier)
+export const updatePaiement = (id, updatedPaiement) => axios.patch(`${url}/dossier/${id}`, updatedPaiement)
 
 // Employés
 export const fetchEmployers = () => axios.get(`${url}employers`)
 export const createEmployer = (newEmployer) => axios.post(`${url}employers`, newEmployer)
-export const updateEmployer = (id, updatedDossier) => axios.patch(`${url}/dossier/${id}`, updatedDossier)
+export const updateEmployer = (id, updatedEmployer) => axios.patch(`${url}/dossier/${id}`, updatedEmployer)
