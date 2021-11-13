@@ -27,6 +27,7 @@ export const createDossier = async (req, res) =>{
 
 export const updateDossier = async (req, res) => {
     const { id: _id } = req.params
+    console.log('This is params: ', req.params)
     const dossier = req.body
     // if(!Mongoose.types.ObjectId.isValid(_id)) return res.status(404).send("No dossier with that id")  
     const updatedDossier = await Dossier.findByIdAndUpdate(_id,  { ...dossier, _id}, { new: true })
