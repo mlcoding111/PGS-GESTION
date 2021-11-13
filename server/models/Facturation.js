@@ -3,29 +3,16 @@ import mongoose from 'mongoose'
 const facturation = mongoose.Schema({
     nomClient: String, 
     montant: String, 
-    dateEnvoyerComptable: {
-        type: Date,
-        default: new Date()
-    },
-    dateRecu: {
-        type: Date,
-        default: new Date()
-    },
-    dateEnvoyerClient: {
-        type: Date,
-        default: new Date()
-    },
-    datePayer: {
-        type: Date,
-        default: new Date()
-    },
+    dateEnvoyerComptable: String,
+    dateRecu: String,
+    dateEnvoyerClient: String,
+    datePayer: String,
     numeroFacture: String,
     payer: String,
     montantRecu: String,
     creationInfo:{
         date: {
-            type: Date,
-            default: new Date()
+            type: String
         },
         utilisateur: String
     }

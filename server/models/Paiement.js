@@ -4,16 +4,14 @@ const paiement = mongoose.Schema({
     fournisseur: String, 
     montant: String,
     date: {
-        type: Date,
-        default: new Date()
+        type: String
     },
     faitPar: String,
     accepterPar: String,
     numeroFacture: String,
     creationInfo:{
         date: {
-            type: Date,
-            default: new Date()
+            type: String
         },
         utilisateur: String
     }

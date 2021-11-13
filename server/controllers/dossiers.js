@@ -13,7 +13,7 @@ export const getDossiers = async (req, res) => {
 
 export const createDossier = async (req, res) =>{
     const post = req.body
-    
+    console.log('This is params: ', req.body)
     const newPost = new Dossier(post)
 
     try{

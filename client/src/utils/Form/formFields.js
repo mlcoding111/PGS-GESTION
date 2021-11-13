@@ -1,4 +1,5 @@
 // Every data required for each Forms will be stored here
+import { format } from "date-fns"
 export class FormFields{
     static get Employee(){
 
@@ -6,8 +7,8 @@ export class FormFields{
             prenom: '',
             nom: '',
             courriel: '',
-            dateEmbauche: new Date(),
-            dateNaissance: new Date(),
+            dateEmbauche: format(new Date(), "Pp"),
+            dateNaissance: format(new Date(), "Pp"),
             referenceNom: '',
             referenceTelephone: '',
             typeEmployer: 'a1',
@@ -42,8 +43,8 @@ export class FormFields{
             nomClient: "",
             numeroClient: "",
             typeTravaux: "",
-            dateAccepter: new Date(),
-            dateAjouter: new Date(),
+            dateAccepter: format(new Date(), "Pp"),
+            dateAjouter: format(new Date(), "Pp"),
             montant: 0,
             numeroFacture: "",
         }
@@ -64,7 +65,7 @@ export class FormFields{
         const initialFValues = {
             fournisseur: "",
             montant: "",
-            date: new Date(),
+            date: format(new Date(), "Pp"),
             faitPar: "",
             accepterPar: "",
             numeroFacture: ""
@@ -80,10 +81,10 @@ export class FormFields{
         const initialFValues = {
             nomClient: "",
             montant: "",
-            dateEnvoyerComptable: new Date(),
-            dateRecu: new Date(),
-            dateEnvoyerClient: new Date(),
-            datePayer: new Date(),
+            dateEnvoyerComptable: format(new Date(), "Pp"),
+            dateRecu: format(new Date(), "Pp"),
+            dateEnvoyerClient: format(new Date(), "Pp"),
+            datePayer: format(new Date(), "Pp"),
             numeroFacture: "",
             payer: "",
             montantRecu: ""

@@ -5,7 +5,7 @@ import { TextField } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { DatePicker as MuiDatePicker } from '@mui/lab';
 
-
+import {format} from 'date-fns'
 export default function DatePicker(props) {
 
     const { name, label, value, onChange } = props
@@ -22,37 +22,10 @@ export default function DatePicker(props) {
         <MuiDatePicker
           label={label}
           value={value}
-          onChange={ date => onChange(convertToDefaultEventParameter(name, date))}
+          onChange={ date => onChange(convertToDefaultEventParameter(name, format(date, 'Pp') ))}
           renderInput={(params) => <TextField sx={{ mt : 2}} {...params} />}
         />
       </LocalizationProvider>
       
     )
 }
-
-
-// import React from 'react'
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import DateFnsUtils from '@date-io/date-fns'
-// import { TextField } from '@mui/material';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import { DatePicker as MuiDatePicker } from '@mui/lab';
-
-
-// export default function DatePicker(props) {
-//     const [value, setValue] = React.useState(null);
-//     // const { name, label, value, onChange } = props
-//     return (
-//         <LocalizationProvider dateAdapter={AdapterDateFns}>
-//         <MuiDatePicker
-//           label="Basic example"
-//           value={value}
-//           onChange={(newValue) => {
-//             setValue(newValue);
-//           }}
-//           renderInput={(params) => <TextField {...params} />}
-//         />
-//       </LocalizationProvider>
-      
-//     )
-// }

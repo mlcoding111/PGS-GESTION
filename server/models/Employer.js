@@ -4,14 +4,8 @@ const empoloyer = mongoose.Schema({
     prenom: String,
     nom: String,
     courriel: String,
-    dateEmbauche:{
-        type: Date,
-        default: new Date()
-    },
-    date_naissance:{
-        type: Date,
-        default: new Date()
-    },
+    dateEmbauche: String,
+    date_naissance: String,
     referenceNom: String,
     referenceTelephone: String,
     typeEmployer: String,
@@ -19,8 +13,7 @@ const empoloyer = mongoose.Schema({
     actif: Boolean,
     creationInfo:{
         date: {
-            type: Date,
-            default: new Date()
+            type: String,
         },
         utilisateur: String
     }

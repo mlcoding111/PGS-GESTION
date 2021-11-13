@@ -6,20 +6,13 @@ const dossier = mongoose.Schema({
     numeroClient: String,
     courriel: String,
     typeTravaux: String,
-    dateAccepter:{
-        type: Date,
-        default: new Date()
-    },
-    dateAjouter:{
-        type: Date,
-        default: new Date()
-    },
+    dateAccepter: String,
+    dateAjouter: String,
     montant: Number,
     numeroFacture: String,
     creationInfo:{
         date: {
-            type: Date,
-            default: new Date()
+            type: String
         },
         utilisateur: String
     }
