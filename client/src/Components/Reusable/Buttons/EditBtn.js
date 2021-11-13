@@ -15,7 +15,6 @@ export default function EditBtn({disabled, selectedItem}) {
     const history = useHistory()
     const path = history.location.pathname.slice(1) // Get the path name without the '/'
     const classes = useStyles();
-    console.log({selectedItem})
     return (
         <Button
             variant="contained"

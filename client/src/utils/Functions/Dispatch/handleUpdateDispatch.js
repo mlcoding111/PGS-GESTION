@@ -9,7 +9,6 @@ import returnCurrentSection from '../../UtilityFunctions'
 
 const handleUpdateDispatch = (pathname, values, id) => {
     pathname = returnCurrentSection(pathname)
-    console.log('THIS IS IT ', id, values)
     switch(pathname){
         case "dossiers":
             return updateDossier(id, values)
