@@ -1,7 +1,6 @@
 // This grid component will be used to showcase the data for each pages. 
 // It will receive as a props the data for the Rows and Columns for the specific page
-
-// Filter selectedItem to add object to array 
+// https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
 
 import React, { useState, useEffect } from 'react'
 import { DataGrid} from "@mui/x-data-grid";
@@ -86,8 +85,8 @@ export default function Grid({col, data, currentId, setCurrentId}) {
               checkboxSelection
               disableSelectionOnClick
               onRowClick={(row)=> console.log(row.row)} // Need to get this to change the state as well
-              // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
-              onSelectionModelChange={(ids) => {              
+              onSelectionModelChange={(ids) => {        
+                setSelectedItems(ids)      
                 const selectedIDs = new Set(ids);
                 const selectedRows = data.filter((row) =>
                   selectedIDs.has(row.id),
@@ -95,17 +94,12 @@ export default function Grid({col, data, currentId, setCurrentId}) {
                 setSelectedRows(selectedRows);
                 (ids.length == 1 ? setEditBtnDisabled(false) : setEditBtnDisabled(true))
                 console.log(selectedRows)
-              }}
-              
+              }}     
+              selectionModel={selectedItems}
               />
-
-{/* <pre style={{ fontSize: 10 }}>
-        {JSON.stringify(selectedRows, null, 4)}
-      </pre> */}
-            <button onClick={()=> console.log(selectedRows[0]._id)}> Click</button>
             <AddBtn />
             <EditBtn disabled={editBtnDisabled} selectedItem={selectedRows.length && selectedRows[0]._id}/>
-            <DeleteBtn selectedRows={selectedRows}/> {/* We pass all the selected items */}
+            <DeleteBtn selectedRows={selectedRows} setSelectedRows={setSelectedRows} setSelectedItems={setSelectedItems}/> {/* We pass all the selected items */}
       </div>
     ))
 }

@@ -35,9 +35,9 @@ export const updateDossier = async (req, res) => {
 }
 
 export const deleteDossier = async (req, res) => {
-    const { dossiers } = req.body
+    const { dossiers } = req.body // Retrieve all the dossiers with the _id we want to delete
 
-    const result = await Dossier.deleteMany({_id: dossiers.map(item => item._id)})
+    const result = await Dossier.deleteMany({_id: dossiers.map(item => item._id)}) // Delete all the the item from dataBase that match with "dossiers"
     // const result = await Dossier.deleteMany(dossiers)
     res.json({ message: 'Dossier deleted successfully', ids: dossiers})
     

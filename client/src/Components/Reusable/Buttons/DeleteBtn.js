@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function DeleteBtn({selectedRows}) {
+export default function DeleteBtn({selectedRows, setSelectedItems, setSelectedRows}) {
     const dispatch = useDispatch()
 
 
@@ -20,12 +20,12 @@ export default function DeleteBtn({selectedRows}) {
         const ids = selectedRows.map((item)=>{
             return item._id
         })
-        console.log(ids)
         dispatch(deleteDossier(selectedRows))
+        
+        // These 2 lines reset the grid selection
+        setSelectedItems([])
+        setSelectedRows([])
         // selectedRows.map(item=> console.log(`${item._id} will be deleted`))
-
-        // Logic to delete the selected items 
-
     }
 
     const classes = useStyles();
