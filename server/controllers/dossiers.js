@@ -24,6 +24,7 @@ export const createDossier = async (req, res) =>{
     }
 }
 
+
 export const updateDossier = async (req, res) => {
     const { id: _id } = req.params
     const dossier = req.body
@@ -31,4 +32,13 @@ export const updateDossier = async (req, res) => {
     const updatedDossier = await Dossier.findByIdAndUpdate(_id,  { ...dossier, _id}, { new: true })
 
     res.json(updatedDossier)
+}
+
+export const deleteDossier = async (req, res) => {
+    const { dossiers } = req.body
+
+    const result = await Dossier.deleteMany({_id: dossiers.map(item => item._id)})
+    // const result = await Dossier.deleteMany(dossiers)
+    res.json({ message: 'Dossier deleted successfully', ids: dossiers})
+    
 }

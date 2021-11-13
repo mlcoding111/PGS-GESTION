@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import { Delete } from '@mui/icons-material'
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteDossier } from '../../../actions/dossiers'
 
     
 const useStyles = makeStyles((theme) => ({
@@ -10,11 +12,20 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function AddBtn({selectedRows}) {
+export default function DeleteBtn({selectedRows}) {
+    const dispatch = useDispatch()
+
 
     const deleteItems = () => {
+        const ids = selectedRows.map((item)=>{
+            return item._id
+        })
+        console.log(ids)
+        dispatch(deleteDossier(selectedRows))
+        // selectedRows.map(item=> console.log(`${item._id} will be deleted`))
+
         // Logic to delete the selected items 
-        selectedRows.map(item=> console.log(`${item._id} will be deleted`))
+
     }
 
     const classes = useStyles();

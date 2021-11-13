@@ -11,6 +11,7 @@ export const createPost = (newPost) => axios.post(`${url}posts`, newPost)
 export const fetchDossiers = () => axios.get(`${url}dossiers`)
 export const createDossier = (newDossier) => axios.post(`${url}dossiers`, newDossier)
 export const updateDossier = (id, updatedDossier) => axios.patch(`${url}dossiers/${id}`, updatedDossier)
+export const deleteDossier = (deleteDossiers) => axios.delete(`${url}dossiers`, {data: {dossiers: deleteDossiers}});
 
 // Facturations
 export const fetchFacturations = () => axios.get(`${url}facturations`)

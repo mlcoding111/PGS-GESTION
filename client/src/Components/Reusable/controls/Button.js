@@ -44,7 +44,7 @@ export default function Button(props) {
                 console.log('delete')
                 break
             case "update":
-                dispatch(Dispatch.handleUpdateDispatch(pathname, values, id))
+                dispatch(Dispatch.handleUpdateDispatch(pathname, values))
                 console.log("update")
                 break
             case "reset":
