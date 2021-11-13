@@ -39,9 +39,9 @@ export const updateDossier = (id, dossier) => async (dispatch)=>{
     }
 }
 
-export const deleteDossier = (ids) => async (dispatch) => {
+export const deleteDossiers = (ids) => async (dispatch) => {
     try {
-        const {data} = await api.deleteDossier(ids)
+        const {data} = await api.deleteDossiers(ids)
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
         console.log(error)

@@ -39,3 +39,13 @@ export const updatePaiement = (id, paiement) => async (dispatch)=>{
         console.log(error.message)
     }
 }
+
+
+export const deletePaiements = (ids) => async (dispatch) => {
+    try {
+        const {data} = await api.deletePaiements(ids)
+        dispatch({ type: DELETE, payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}

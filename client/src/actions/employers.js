@@ -40,3 +40,13 @@ export const updateEmployer = (id, employer) => async (dispatch)=>{
         console.log(error.message)
     }
 }
+
+
+export const deleteEmployers = (ids) => async (dispatch) => {
+    try {
+        const {data} = await api.deleteEmployers(ids)
+        dispatch({ type: DELETE, payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}

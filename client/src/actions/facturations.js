@@ -39,3 +39,12 @@ export const updateFacturation = (id, facturation) => async (dispatch)=>{
         console.log(error.message)
     }
 }
+
+export const deleteFacturations = (ids) => async (dispatch) => {
+    try {
+        const {data} = await api.deleteFacturations(ids)
+        dispatch({ type: DELETE, payload: data})
+    } catch (error) {
+        console.log(error)
+    }
+}
