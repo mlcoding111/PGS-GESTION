@@ -4,6 +4,8 @@ import { Delete } from '@mui/icons-material'
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteDossiers } from '../../../actions/dossiers'
+import { useLocation } from 'react-router'
+import Dispatch from '../../../utils/Functions/Dispatch/Dispatch';
 
     
 const useStyles = makeStyles((theme) => ({
@@ -13,15 +15,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function DeleteBtn({selectedRows, setSelectedItems, setSelectedRows}) {
+    const location = useLocation()
+    let { pathname } = location
     const dispatch = useDispatch()
-
 
     const deleteItems = () => {
         const ids = selectedRows.map((item)=>{
             return item._id
         })
-        dispatch(deleteDossiers(selectedRows))
-        
+        dispatch(Dispatch.handleDeleteDispatch(pathname, selectedRows))
+        // dispatch(deleteDossiers(selectedRows))
+                
         // These 2 lines reset the grid selection
         setSelectedItems([])
         setSelectedRows([])

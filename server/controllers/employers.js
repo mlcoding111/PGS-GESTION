@@ -38,8 +38,8 @@ export const updateEmployer = async (req, res) => {
 export const deleteEmployers = async (req, res) => {
     const { employers } = req.body // Retrieve all the employers with the _id we want to delete
 
-    const result = await Dossier.deleteMany({_id: employers.map(item => item._id)}) // Delete all the the item from dataBase that match with "employers"
-    // const result = await Dossier.deleteMany(employers)
-    res.json({ message: 'Dossier deleted successfully', ids: employers})
+    const result = await Employer.deleteMany({_id: employers.map(item => item._id)}) // Delete all the the item from dataBase that match with "employers"
+    // const result = await Employer.deleteMany(employers)
+    res.json({ message: 'Employer deleted successfully', ids: employers})
     
 }

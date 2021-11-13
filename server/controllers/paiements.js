@@ -38,8 +38,8 @@ export const updatePaiement = async (req, res) => {
 export const deletePaiements = async (req, res) => {
     const { paiements } = req.body // Retrieve all the paiements with the _id we want to delete
 
-    const result = await Dossier.deleteMany({_id: paiements.map(item => item._id)}) // Delete all the the item from dataBase that match with "paiements"
-    // const result = await Dossier.deleteMany(paiements)
-    res.json({ message: 'Dossier deleted successfully', ids: paiements})
+    const result = await Paiement.deleteMany({_id: paiements.map(item => item._id)}) // Delete all the the item from dataBase that match with "paiements"
+    // const result = await Paiement.deleteMany(paiements)
+    res.json({ message: 'Paiement deleted successfully', ids: paiements})
     
 }

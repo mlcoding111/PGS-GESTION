@@ -38,8 +38,8 @@ export const updateFacture = async (req, res) => {
 export const deleteFacturations = async (req, res) => {
     const { facturations } = req.body // Retrieve all the facturations with the _id we want to delete
 
-    const result = await Dossier.deleteMany({_id: facturations.map(item => item._id)}) // Delete all the the item from dataBase that match with "facturations"
-    // const result = await Dossier.deleteMany(facturations)
-    res.json({ message: 'Dossier deleted successfully', ids: facturations})
+    const result = await Facturation.deleteMany({_id: facturations.map(item => item._id)}) // Delete all the the item from dataBase that match with "facturations"
+    // const result = await Facturation.deleteMany(facturations)
+    res.json({ message: 'Facturation deleted successfully', ids: facturations})
     
 }
