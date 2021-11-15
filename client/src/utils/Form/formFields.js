@@ -8,7 +8,7 @@ export class FormFields{
             nom: '',
             courriel: '',
             dateEmbauche: format(new Date(), "Pp"),
-            dateNaissance: format(new Date(), "Pp"),
+            dateNaissance: format(new Date(), "P"),
             referenceNom: '',
             referenceTelephone: '',
             typeEmployer: 'a1',

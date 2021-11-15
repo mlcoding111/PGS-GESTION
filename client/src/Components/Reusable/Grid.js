@@ -3,7 +3,7 @@
 // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
 
 import React, { useState, useEffect } from 'react'
-import { DataGrid} from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import AddBtn from './Buttons/AddBtn';
@@ -81,6 +81,10 @@ export default function Grid({col, data, currentId, setCurrentId}) {
             <DataGrid
               rows={data} // Need to be data
               columns={col}
+              components={{
+                Toolbar: GridToolbar,
+              }}
+              ColumnResizeIcon
               pageSize={10}
               rowsPerPageOptions={[10]}
               checkboxSelection
