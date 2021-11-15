@@ -23,7 +23,7 @@ export default function DatePicker(props) {
           label={label}
           value={value}
           onChange={ date => onChange(convertToDefaultEventParameter(name, format(date, 'Pp') ))}
-          renderInput={(params) => <TextField sx={{ mt : 2}} {...params} />}
+          renderInput={(params) => <TextField sx={{ mt : 2}} {...params} />} 
         />
       </LocalizationProvider>
       

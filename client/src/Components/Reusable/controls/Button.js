@@ -36,9 +36,14 @@ export default function Button(props) {
     const handleClick = (e) => {
         e.preventDefault()
         switch(dispatchType){
+            case "reset":
+                setValues(initialFValues)
+                console.log('reset')
+                break
             case "add":
                 dispatch(Dispatch.handleCreateDispatch(pathname, values))
                 console.log('add')
+                history.push(`/${returnCurrentSection(pathname)}`)
                 break
             case "delete":
                 console.log('delete')
@@ -46,14 +51,13 @@ export default function Button(props) {
             case "update":
                 dispatch(Dispatch.handleUpdateDispatch(pathname, values, id))
                 console.log("update")
+                history.push(`/${returnCurrentSection(pathname)}`)
                 break
-            case "reset":
-                setValues(initialFValues)
-                break
+
             default:
                 console.log('unknow button')
         }
-        history.push(`/${returnCurrentSection(pathname)}`)
+
     }
 
     const classes = useStyles()

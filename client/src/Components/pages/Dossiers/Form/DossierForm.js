@@ -82,7 +82,7 @@ export default function DossierForm() {
         <Grid item xs={12} className={classes.submit}>
           <div>
             <Controls.Button text="Soumettre" type="Submit"  dispatchType={location.state ? "update": "add"} values={values} id={location.state ? location.state.id : null}/>
-            <Controls.Button text="Reset" color="error" type="Submit" />
+            <Controls.Button text="Réinitialiser" color="error" type="Reset" dispatchType={"reset"} setValues={setValues} initialFValues={initialFValues}/>
           </div>
         </Grid>
       </Grid>

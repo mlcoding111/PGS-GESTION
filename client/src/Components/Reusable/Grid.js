@@ -75,7 +75,7 @@ export default function Grid({col, data, currentId, setCurrentId}) {
         !data.length ? 
         <Box sx={{ width: '100%' }}>
           <LinearProgress />
-          <AddBtn /> //
+          <AddBtn />
         </Box> : 
         (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
