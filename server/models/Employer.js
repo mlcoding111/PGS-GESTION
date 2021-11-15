@@ -5,7 +5,7 @@ const empoloyer = mongoose.Schema({
     nom: String,
     courriel: String,
     dateEmbauche: String,
-    date_naissance: String,
+    dateNaissance: String,
     referenceNom: String,
     referenceTelephone: String,
     typeEmployer: String,
