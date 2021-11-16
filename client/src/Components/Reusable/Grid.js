@@ -2,16 +2,15 @@
 // It will receive as a props the data for the Rows and Columns for the specific page
 // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
 
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { DataGrid, GridToolbar, renderActionsCell } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import CircleIcon from '@mui/icons-material/Circle';
 import AddBtn from './Buttons/AddBtn';
 import DeleteBtn from './Buttons/DeleteBtn';
 import EditBtn from './Buttons/EditBtn'
 import {format} from 'date-fns'
+import { createStyles, makeStyles } from '@mui/styles';
 
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
@@ -60,7 +59,13 @@ const rows = [
     { id: 10, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function Grid({col, data, currentId, setCurrentId}) {
+const useStyles = makeStyles(
+  
+);
+
+export default function Grid({col, data}) {
+    const classes = useStyles();
+
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectedRows, setSelectedRows] = React.useState([]);
   const [editBtnDisabled, setEditBtnDisabled] = useState(true)
@@ -80,6 +85,10 @@ export default function Grid({col, data, currentId, setCurrentId}) {
       // Object.values(data) == true ? console.log('good'): console.log('bad')
     })
 
+    col && col.map((col)=>{
+      col.cellClassName= 'MuiDataGrid-cell--textCenter' 
+    })
+
     // col && col.map((col, index)=> {
     //   col['field'] === "actif" ? col.headerName= <LocalPhoneIcon/> : console.log("no")
     //   console.log(col)      
@@ -97,6 +106,7 @@ export default function Grid({col, data, currentId, setCurrentId}) {
         </Box> : 
         (<div style={{ height: 640, width: "100%" }}>
             <DataGrid
+              className={classes.root}
               rows={data} // Need to be data
               columns={col}
               components={{

@@ -57,7 +57,7 @@ export class Columns{
         const columns = [
             { field: 'id', headerName: 'ID', width: 70 },
             { field: 'numeroClient', renderHeader: () => (<><Phone fontSize={"small"} sx={{mr: .5}}/>{"Téléphone"}</>), width: 150 },
-            { field: 'nomClient', renderHeader: ()=>(<><Person fontSize={"small"} sx={{mr: .5}}/>{"Nom"}</>), width: 130 },
+            { field: 'nomClient', renderHeader: ()=>(<><Person fontSize={"small"} sx={{mr: .5}}/>{"Nom"}</>), width: 130},
             { field: 'typeTravaux', renderHeader: ()=>(<><Work fontSize={"small"} sx={{mr: .5}}/>{"Type travaux"}</>), width: 150 },
             { field: 'numeroFacture', renderHeader: ()=>(<><Receipt fontSize={"small"} sx={{mr: .5}}/>{"Numéro facture"}</>), width: 160 },
             { field: 'dateAccepter', renderHeader: ()=>(<><Today fontSize={"small"} sx={{mr: .5}}/>{"Date accepter"}</>), width: 170 },
