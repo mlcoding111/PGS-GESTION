@@ -3,9 +3,11 @@
 // https://stackoverflow.com/questions/66424752/get-row-item-on-checkbox-selection-in-react-mui-datagrid
 
 import React, { useState, useEffect } from 'react'
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar, renderActionsCell } from "@mui/x-data-grid";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import CircleIcon from '@mui/icons-material/Circle';
 import AddBtn from './Buttons/AddBtn';
 import DeleteBtn from './Buttons/DeleteBtn';
 import EditBtn from './Buttons/EditBtn'
@@ -65,7 +67,23 @@ export default function Grid({col, data, currentId, setCurrentId}) {
 
     data && data.map((data, index)=>{ // If data is not empty, assign id for each data
       data['id'] = index += 1
+      console.log(data.actif)
+      // if(Object.keys(data.actif)){
+      //  data.actif = ()=> <CircleIcon/> 
+      // }
+      // Object.keys(data.actif) ? data.renderCell = ()=> <CircleIcon/>:<CircleIcon/>
+      // if(Object.values(data) == true){
+      //   console.log('good')
+      // }else{
+      //   console.log('bad')
+      // }
+      // Object.values(data) == true ? console.log('good'): console.log('bad')
     })
+
+    // col && col.map((col, index)=> {
+    //   col['field'] === "actif" ? col.headerName= <LocalPhoneIcon/> : console.log("no")
+    //   console.log(col)      
+    // })
 
     // console.log(col.push( { field: '', headerName: '', width: 100, renderCell: () =>{
     //   return <button>Salut</button>

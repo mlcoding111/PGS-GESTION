@@ -8,7 +8,7 @@ const facturation = mongoose.Schema({
     dateEnvoyerClient: String,
     datePayer: String,
     numeroFacture: String,
-    payer: String,
+    payer: Boolean,
     montantRecu: String,
     creationInfo:{
         date: {

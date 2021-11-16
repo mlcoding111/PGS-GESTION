@@ -91,8 +91,8 @@ export class FormFields{
         }
 
         const statusPaiement = [
-            { id: 'payer', title: 'Payer'},
-            { id: 'non_payer', title: 'Non payer'},
+            { id: true, title: 'Payer'},
+            { id: false, title: 'Non payer'},
         ]
 
         return {

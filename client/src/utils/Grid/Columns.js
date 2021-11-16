@@ -1,8 +1,13 @@
 // This class contains all the information for the grid columns
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import CircleIcon from '@mui/icons-material/Circle';
+
+function getStatus(params){
+
+    return params.row.actif || params.row.payer ? <CircleIcon color="success"/> : <CircleIcon color="error"/>
+}
 
 export class Columns{
-
     static get employees(){
         const columns = [
             { field: 'id', headerName: 'ID', width: 70},
@@ -12,9 +17,9 @@ export class Columns{
             { field: 'referenceNom', headerName: 'Nom reference', width: 200 },
             { field: 'referenceTelephone', headerName: 'Téléphone reference', width: 170 },
             { field: 'typeEmployer', headerName: 'Type', width: 70 },
-            { field: 'actif', headerName: 'Actif', width: 70},
             { field: 'dateEmbauche', headerName: 'Date embauche', width: 170 },
-            { field: 'dateNaissance', headerName: 'Date de naissance', width: 170, headerCell: () => <LocalPhoneIcon/>, headerCell: "yo"},
+            { field: 'dateNaissance', headerName: 'Date de naissance', width: 170},
+            { field: 'actif', headerName: 'Actif', width: 70, renderCell: (params) => getStatus(params)},
         ];
         return columns
     }
@@ -30,7 +35,7 @@ export class Columns{
             { field: 'datePayer', headerName: 'Date payer', width: 170 },
             { field: 'dateEnvoyerClient', headerName: 'Envoyer par client', width: 170 },
             { field: 'dateEnvoyerComptable', headerName: 'Envoyer le', width: 170 },
-            { field: 'payer', headerName: 'Status', width: 80 },
+            { field: 'payer', headerName: 'Status', width: 80, renderCell: (params) => getStatus(params)},
         ];
         return columns
     }
