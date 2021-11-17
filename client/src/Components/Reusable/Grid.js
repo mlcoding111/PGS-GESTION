@@ -11,6 +11,7 @@ import DeleteBtn from './Buttons/DeleteBtn';
 import EditBtn from './Buttons/EditBtn'
 import {format} from 'date-fns'
 import { createStyles, makeStyles } from '@mui/styles';
+import { fontSize } from '@mui/system';
 
 const columns = [
     { field: "id", headerName: "ID", width: 90 },
@@ -59,9 +60,13 @@ const rows = [
     { id: 10, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-const useStyles = makeStyles(
-  
-);
+const useStyles = makeStyles({
+  root:{
+    header: {
+      fontWeight: 'bold',
+    },  
+  }, 
+})
 
 export default function Grid({col, data}) {
     const classes = useStyles();
@@ -87,17 +92,10 @@ export default function Grid({col, data}) {
 
     col && col.map((col)=>{
       col.cellClassName= 'MuiDataGrid-cell--textCenter' 
+      // col.headerAlign ="center"
+      col.headerClassName="bold"
     })
-
-    // col && col.map((col, index)=> {
-    //   col['field'] === "actif" ? col.headerName= <LocalPhoneIcon/> : console.log("no")
-    //   console.log(col)      
-    // })
-
-    // console.log(col.push( { field: '', headerName: '', width: 100, renderCell: () =>{
-    //   return <button>Salut</button>
-    // }}))   
-
+    
     return (
         !data.length ? 
         <Box sx={{ width: '100%' }}>
