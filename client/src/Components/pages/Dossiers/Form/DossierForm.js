@@ -28,6 +28,12 @@ export default function DossierForm() {
     <Form name="dossierForm" values={values}>
       <Grid container className={classes.grid}>
         <Grid item xs={6}>
+        <Controls.Input
+            name="prenomClient"
+            label="Prénom"
+            value={values.prenomClient}
+            onChange={handleInputChange}
+          />
           <Controls.Input
             name="nomClient"
             label="Nom"

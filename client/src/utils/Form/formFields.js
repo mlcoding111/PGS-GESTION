@@ -7,8 +7,8 @@ export class FormFields{
             prenom: '',
             nom: '',
             courriel: '',
-            dateEmbauche: format(new Date(), "Pp"),
-            dateNaissance: format(new Date(), "P"),
+            dateEmbauche: new Date(),
+            dateNaissance: new Date(),
             referenceNom: '',
             referenceTelephone: '',
             typeEmployer: 'a1',
@@ -43,8 +43,8 @@ export class FormFields{
             nomClient: "",
             numeroClient: "",
             typeTravaux: "",
-            dateAccepter: format(new Date(), "Pp"),
-            dateAjouter: format(new Date(), "Pp"),
+            dateAccepter: new Date(),
+            dateAjouter: new Date(),
             montant: 0,
             numeroFacture: "",
         }
@@ -65,7 +65,7 @@ export class FormFields{
         const initialFValues = {
             fournisseur: "",
             montant: "",
-            date: format(new Date(), "Pp"),
+            date: new Date(),
             faitPar: "",
             accepterPar: "",
             numeroFacture: ""
@@ -81,12 +81,12 @@ export class FormFields{
         const initialFValues = {
             nomClient: "",
             montant: "",
-            dateEnvoyerComptable: format(new Date(), "Pp"),
-            dateRecu: format(new Date(), "Pp"),
-            dateEnvoyerClient: format(new Date(), "Pp"),
-            datePayer: format(new Date(), "Pp"),
+            dateEnvoyerComptable: new Date(),
+            dateRecu: new Date(),
+            dateEnvoyerClient: new Date(),
+            datePayer: new Date(), 
             numeroFacture: "",
-            payer: "",
+            payer: false,
             montantRecu: ""
         }
 
