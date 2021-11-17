@@ -31,7 +31,7 @@ export default function DatePicker(props) {
         label={label}
         value={value}
         onChange={(date) =>
-          onChange(convertToDefaultEventParameter(name, format(date, "Pp")))
+          onChange(convertToDefaultEventParameter(name, date))
         }
         renderInput={(params) => <TextField sx={{ mt: 2 }} {...params} />}
       />
