@@ -74,6 +74,7 @@ export default function Grid({col, data}) {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectedRows, setSelectedRows] = React.useState([]);
   const [editBtnDisabled, setEditBtnDisabled] = useState(true)
+  const [deleteBtnDisabled, setDeleteBtnDisabled] = useState(true)
 
     data && data.map((data, index)=>{ // If data is not empty, assign id for each data
       data['id'] = index += 1
@@ -90,12 +91,12 @@ export default function Grid({col, data}) {
       // Object.values(data) == true ? console.log('good'): console.log('bad')
     })
 
-    col && col.map((col)=>{
+    col && col.map((col)=>{      
       col.cellClassName= 'MuiDataGrid-cell--textCenter' 
       // col.headerAlign ="center"
       col.headerClassName="bold"
     })
-    
+
     return (
         !data.length ? 
         <Box sx={{ width: '100%' }}>
@@ -123,14 +124,15 @@ export default function Grid({col, data}) {
                   selectedIDs.has(row.id),
                 );      
                 setSelectedRows(selectedRows);
-                (ids.length == 1 ? setEditBtnDisabled(false) : setEditBtnDisabled(true))
-                console.log(selectedRows)
+                ids.length == 1 ? setEditBtnDisabled(false) : setEditBtnDisabled(true)
+
+                ids.length > 0 ? setDeleteBtnDisabled(false) : setDeleteBtnDisabled(true)
               }}     
               selectionModel={selectedItems}
               />
             <AddBtn />
             <EditBtn disabled={editBtnDisabled} selectedItem={selectedRows.length && selectedRows[0]._id}/>
-            <DeleteBtn selectedRows={selectedRows} setSelectedRows={setSelectedRows} setSelectedItems={setSelectedItems}/> {/* We pass all the selected items */}
+            <DeleteBtn selectedRows={selectedRows} setSelectedRows={setSelectedRows} setSelectedItems={setSelectedItems} disabled={deleteBtnDisabled}/> {/* We pass all the selected items */}
       </div>
     ))
 }

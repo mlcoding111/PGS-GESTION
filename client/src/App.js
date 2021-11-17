@@ -36,6 +36,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const theme = createTheme(
   frFR,
   Fr

@@ -45,6 +45,9 @@ export const updateEmployer = (id, employer) => async (dispatch)=>{
 export const deleteEmployers = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteEmployers(ids)
+
+        toast.success(`Employer : ${data.prénom} ${data.nom} supprimer avec succès !`);        
+        playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
         console.log(error)

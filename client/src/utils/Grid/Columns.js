@@ -11,6 +11,7 @@ import {
   Person,
   Work,
   MonetizationOn,
+  Help
 } from "@mui/icons-material";
 
 function getStatus(params) {
@@ -104,7 +105,11 @@ export class Columns {
       },
       {
         field: "actif",
-        headerName: "Actif",
+        renderHeader: () => (
+          <>
+            {"Status"}
+          </>
+        ),
         width: 70,
         renderCell: (params) => getStatus(params),
       },

@@ -42,6 +42,9 @@ export const updateDossier = (id, dossier) => async (dispatch)=>{
 export const deleteDossiers = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteDossiers(ids)
+
+        toast.success(`Dossier : ${data.nomClient} supprimer avec succès !`);        
+        playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
         console.log(error)

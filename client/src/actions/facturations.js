@@ -43,6 +43,8 @@ export const updateFacturation = (id, facturation) => async (dispatch)=>{
 export const deleteFacturations = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteFacturations(ids)
+        toast.success(`Facture : ${data.numeroFacture} supprimer avec succès !`);        
+        playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
         console.log(error)

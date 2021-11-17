@@ -23,6 +23,7 @@ export default function EditBtn({disabled, selectedItem}) {
             disabled={disabled}
             startIcon={<PersonPinCircle />}
             className={classes.button}
+            sx={{m: 1}}
             onClick={()=> history.push({
                 pathname: `${path}/${selectedItem}`,
                 state: { id: selectedItem }

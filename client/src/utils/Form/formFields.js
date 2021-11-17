@@ -18,10 +18,10 @@ export class FormFields{
         }
 
         const employeeTypes = [
-            { id: 'a1', title: 'A1'},
-            { id: 'a2', title: 'A2'},
-            { id: 'a3', title: 'A3'},
-            { id: 'c', title: 'C'}
+            { id: 'A1', title: 'Apprenti 1'},
+            { id: 'A2', title: 'Apprenti 2'},
+            { id: 'A3', title: 'Apprenti 3'},
+            { id: 'C', title: 'Compagnon'}
         ]
 
         const departementdata = [

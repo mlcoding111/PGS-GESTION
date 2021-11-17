@@ -44,6 +44,9 @@ export const updatePaiement = (id, paiement) => async (dispatch)=>{
 export const deletePaiements = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deletePaiements(ids)
+
+        toast.success(`Paiement: ${data.nomClient} supprimer avec succès !`);        
+        playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
         console.log(error)
