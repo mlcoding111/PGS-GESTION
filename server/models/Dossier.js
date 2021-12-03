@@ -9,7 +9,7 @@ const dossier = mongoose.Schema({
     typeTravaux: String,
     dateAccepter: Date,
     dateAjouter: Date,
-    montant: Number,
+    montant: String,
     numeroFacture: String,
     creationInfo:{
         date: {
