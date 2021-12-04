@@ -19,7 +19,7 @@ export const createEmployer = (employer) => async (dispatch) => {
     try {
         const { data } = await api.createEmployer(employer) // make api request to the server
 
-        toast.success(`Employer ajouté : ${data.prenom} ${data.nom}`);        
+        toast.success(`Employer ajouté `);        
         playAudio()
 
         dispatch({ type: CREATE, payload: data })
@@ -32,7 +32,7 @@ export const updateEmployer = (id, employer) => async (dispatch)=>{
     try {
         const { data } = await api.updateEmployer(id, employer)
 
-        toast.success(`L'employer ${data.prenom} ${data.nom} a été modifié avec succes !`);  // Will have to correct the grammar with proper keybaord language     
+        toast.success(`L'employer a été modifié avec succes !`);  // Will have to correct the grammar with proper keybaord language     
         playAudio()
         
         dispatch({ type: UPDATE, payload: data})
@@ -46,7 +46,7 @@ export const deleteEmployers = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteEmployers(ids)
 
-        toast.success(`Employer : ${data.prénom} ${data.nom} supprimer avec succès !`);        
+        toast.success(`Employer  supprimer avec succès !`);        
         playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {

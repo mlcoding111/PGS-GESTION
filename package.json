@@ -1,0 +1,28 @@
+{
+  "name": "pgs_rework",
+  "version": "1.0.0",
+  "description": "This is a full stack MERN management application for the business PGS-CONSTRUCTION inc.",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "cd server && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd server && nodemon index.js --port 5000 --middlewares ./range.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlcoding111/PGS-GESTION.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlcoding111/PGS-GESTION/issues"
+  },
+  "homepage": "https://github.com/mlcoding111/PGS-GESTION#readme"
+}

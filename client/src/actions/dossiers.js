@@ -18,9 +18,8 @@ export const createDossier = (dossier) => async (dispatch) => {
     try {
         const { data } = await api.createDossier(dossier) // make api request to the server
 
-        toast.success(`Dossier ajouté : ${data.nomClient}`);        
-        playAudio()
-        
+        toast.success(`Dossier ajouté`);        
+        playAudio()        
         dispatch({ type: CREATE, payload: data })
     } catch (error) {
         console.log(error)
@@ -31,7 +30,7 @@ export const updateDossier = (id, dossier) => async (dispatch)=>{
     try {
         const { data } = await api.updateDossier(id, dossier)
 
-        toast.success(`Dossier : ${data.nomClient} modifié avec succès !`);        
+        toast.success(`Dossier modifié avec succès !`);        
         playAudio()
         dispatch({ type: UPDATE, payload: data})
     } catch (error) {
@@ -43,7 +42,7 @@ export const deleteDossiers = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteDossiers(ids)
 
-        toast.success(`Dossier : ${data.nomClient} supprimer avec succès !`);        
+        toast.success(`Dossier  supprimer avec succès !`);        
         playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {

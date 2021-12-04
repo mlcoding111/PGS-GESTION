@@ -18,7 +18,7 @@ export const createFacturation = (facturation) => async (dispatch) => {
     try {
         const { data } = await api.createFacturation(facturation) // make api request to the server
         
-        toast.success(`Facture ajouté : #${data.numeroFacture}`);        
+        toast.success(`Facture ajouté `);        
         playAudio()
 
         dispatch({ type: CREATE, payload: data })
@@ -31,7 +31,7 @@ export const updateFacturation = (id, facturation) => async (dispatch)=>{
     try {
         const { data } = await api.updateFacturation(id, facturation)
 
-        toast.success(`La facture de ${data.nomClient} a été modifié avec succes ! : `);  // Will have to correct the grammar with proper keybaord language     
+        toast.success(`La facture a été modifié avec succes ! : `);  // Will have to correct the grammar with proper keybaord language     
         playAudio()
 
         dispatch({ type: UPDATE, payload: data})
@@ -43,7 +43,7 @@ export const updateFacturation = (id, facturation) => async (dispatch)=>{
 export const deleteFacturations = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deleteFacturations(ids)
-        toast.success(`Facture : ${data.numeroFacture} supprimer avec succès !`);        
+        toast.success(`Facture supprimer avec succès !`);        
         playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {

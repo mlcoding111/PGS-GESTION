@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme=>({
 
 }))
 
+
 export default function Button(props) {
     const history = useHistory()
     const {text, size, color, variant, onClick, values, type, dispatchType, setValues, initialFValues, id, ...other} = props
@@ -29,9 +30,38 @@ export default function Button(props) {
     const location = useLocation()
     let { pathname } = location
 
-    console.log({dispatchType})
+    const makeRequest = (dispatchType) => {
+        return new Promise((resolve, reject) => {
+            console.log('Making dispatch request..')
+            if(dispatchType == "add"){
+                resolve(dispatch(Dispatch.handleCreateDispatch(pathname, values)))
+            }else if(dispatchType == "update"){
+                resolve(dispatch(Dispatch.handleUpdateDispatch(pathname, values, id)))
+            }else{
+                reject("error....")
+            }
+        })
+    }
 
-        // console.log(values)
+    const pushHistory = () => {
+        return new Promise((resolve, reject)=>{ 
+            resolve(history.push(`/${returnCurrentSection(pathname)}`))
+        })
+    }
+
+    // This function handle the dispatch request. We make sure the dispatch is handled and the grid list is updated before directering the user to the grid list
+    async function doWork(dispatchType){
+        try{
+            const response = await makeRequest(dispatchType)
+            console.log('work executed')
+            const processedResponse = await pushHistory()
+            console.log("history push")
+        }catch(err){
+            console.log(err)
+        }
+
+    }
+        
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -41,17 +71,13 @@ export default function Button(props) {
                 console.log('reset')
                 break
             case "add":
-                dispatch(Dispatch.handleCreateDispatch(pathname, values))
-                console.log('add')
-                history.push(`/${returnCurrentSection(pathname)}`)
+                doWork(dispatchType)
                 break
             case "delete":
                 console.log('delete')
                 break
             case "update":
-                dispatch(Dispatch.handleUpdateDispatch(pathname, values, id))
-                console.log("update")
-                history.push(`/${returnCurrentSection(pathname)}`)
+                doWork(dispatchType)
                 break
 
             default:

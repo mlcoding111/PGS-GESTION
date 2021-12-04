@@ -31,7 +31,7 @@ export const updatePaiement = (id, paiement) => async (dispatch)=>{
     try {
         const { data } = await api.updatePaiement(id, paiement)
 
-        toast.success(`Le paiement :  ${data.numeroFacture} a été modifié avec succes ! `);  // Will have to correct the grammar with proper keybaord language     
+        toast.success(`Le paiement a été modifié avec succes ! `);  // Will have to correct the grammar with proper keybaord language     
         playAudio()
 
         dispatch({ type: UPDATE, payload: data})
@@ -45,7 +45,7 @@ export const deletePaiements = (ids) => async (dispatch) => {
     try {
         const {data} = await api.deletePaiements(ids)
 
-        toast.success(`Paiement: ${data.nomClient} supprimer avec succès !`);        
+        toast.success(`Paiement supprimer avec succès !`);        
         playAudio()
         dispatch({ type: DELETE, payload: data})
     } catch (error) {
